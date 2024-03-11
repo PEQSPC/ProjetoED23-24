@@ -1,0 +1,6 @@
+﻿  functions.c
+E:\C\ProjetoFase1\functions.c(135,8): warning C4047: '=': 'FILE *' differs in levels of indirection from 'errno_t'
+  main.c
+E:\C\ProjetoFase1\main.c(39,2): warning C4013: 'saveMatrixToFile' undefined; assuming extern returning int
+  Generating Code...
+  ProjetoFase1.vcxproj -> E:\C\ProjetoFase1\x64\Debug\ProjetoFase1.exe
