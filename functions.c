@@ -1,159 +1,199 @@
+/**
+ * @file functions.c
+ * @author Teles Gomes
+ * @date 2024-03
+ * @author telesgomes96@gmail.com
+ *
+ */
 #include "main.h"
-#include <stdbool.h>
 #include <stdio.h>
-#include <stdlib.h> // para a função malloc
-
+#include <string.h>
+#include <stdlib.h>
+#include <stdbool.h>
 #define FILENAME "matriz.txt"
 
-#pragma region Primeira Pergunta Trabalho
-//// Estrutura do nó da lista ligada
-//typedef struct Line {
-//    int value;
-//    struct Line* next;
-//} Line;
-//
-//// Função para criar um novo nó
-//Line* CreateValue(int value) {
-//    Line* aux = (Line*)malloc(sizeof(Line));
-//    if (aux == NULL) return NULL;
-//    aux->value = value;
-//    aux->next = NULL;
-//    return aux;
-//}
-//
-//// Função para inserir um novo nó no final da lista
-//Line* Insertintolist(Line* inicio, Line* novo) {
-//    if (novo == NULL) return inicio;
-//    if (inicio == NULL) {
-//        return novo;
-//    }
-//
-//    Line* aux = inicio;
-//    while (aux->next != NULL) aux = aux->next;
-//    aux->next = novo;
-//    return inicio;
-//}
-//
-//// Função para mostrar um único nó
-//bool ShowLine(Line* p) {
-//    if (p == NULL) return false;
-//    printf("Value: %d\n", p->value);
-//    return true;
-//}
-//
-//// Função para mostrar todos os nós da lista
-//bool ShowallLines(Line* inicio) {
-//    if (inicio == NULL) return false;
-//    Line* aux = inicio;
-//    while (aux != NULL) {
-//        ShowLine(aux);
-//        aux = aux->next;
-//    }
-//    return true;
-//}
-#pragma endregion
 
-/// Funcao para criar uma nova celula da matriz
-MatrixCell* createMatrixCell(int value, int row, int col) {
-    MatrixCell* cell = (MatrixCell*)malloc(sizeof(MatrixCell));
-    ///Verifica se a celula foi mal criada
-    if (cell == NULL) {
-        printf("Erro: Falha ao alocar memória para a célula.\n");
-        exit(1);
-    }
-    
-    cell->value = value; /// Apontador que aponta para o valor value na struct
-    cell->row = row; /// adiciona o valor row na struct MatrizCell
-    cell->col = col;
-    cell->nextRow = NULL;
-    cell->nextCol = NULL;
-    return cell;
+ /**
+  * @brief Insere uma linha no inicio da Lista.
+  *
+  * @param inicio
+  * @param nova
+  * @return
+  * @author teles
+  *
+  */
+// Função para inserir um novo nó no início de uma lista ligada da Linha.
+Linha* inserirDadosInicioLinha(Linha* inicio, int valorInserir) {
+    if (valorInserir == NULL) return inicio;
+    if (inicio == NULL)
+        inicio = valorInserir;
+    //Alocação de Memoria
+    Linha* aux = (Linha*)malloc(sizeof(Linha));
+    if (aux == NULL) return NULL;
+
+    // Define o valor do novo nó como o valor fornecido.
+    aux->valor = valorInserir;
+
+    // O próximo nó após o novo nó será o nó atual do início da lista.
+    aux->proximo = inicio;
+
+    // Retorna o ponteiro para o novo nó, que agora se tornou o início da lista.
+    return aux;
 }
 
-/// Função para inicializar a matriz com um número específico de linhas e colunas
-Matrix* initializeMatrix(int rows, int cols) {
-    Matrix* matrix = (Matrix*)malloc(sizeof(Matrix));
-    if (matrix == NULL) {
-        printf("Erro: Falha ao alocar memória para a matriz.\n");
-        exit(1);
-    }
-    matrix->rows = rows;
-    matrix->cols = cols;
-    matrix->head = NULL;
-    // Criar células para cada elemento da matriz
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            MatrixCell* cell = createMatrixCell(0, i, j); // Valor inicial é 0
-            // Conectar células na linha
-            if (matrix->head == NULL || i == 0) {
-                cell->nextRow = matrix->head;
-                matrix->head = cell;
-            }
-            else {
-                MatrixCell* temp = matrix->head;
-                while (temp->nextRow != NULL && temp->nextRow->col < j)
-                    temp = temp->nextRow;
-                cell->nextRow = temp->nextRow;
-                temp->nextRow = cell;
-            }
-            // Conectar células na coluna
-            if (i > 0) {
-                MatrixCell* temp = matrix->head;
-                while (temp->nextCol != NULL && temp->nextCol->row < i)
-                    temp = temp->nextCol;
-                cell->nextCol = temp->nextCol;
-                temp->nextCol = cell;
-            }
-        }
-    }
-    return matrix;
+// Função para inserir uma nova linha no início de uma lista ligada de Matriz.
+Matriz* inserirNovaLinha(Matriz* inicio, Linha* linhaInserir) {
+    Matriz* nova;
+    nova = malloc(sizeof(Matriz));
+
+    // Define o início da linha da nova matriz como a linha a ser inserida.
+    nova->inicioLinha = linhaInserir;
+    // O próximo nó após a nova matriz será o nó atual do início da lista.
+    nova->proximo = inicio;
+
+    // Retorna o ponteiro para a nova matriz, que agora se tornou o início da lista.
+    return nova;
 }
 
-/// Função para imprimir a matriz
-void printMatrix(Matrix* matrix) {
-    if (matrix == NULL || matrix->head == NULL) {
-        printf("Matriz vazia.\n");
-        return;
+// Função para imprimir os valores de uma linha de uma matriz.
+bool printLinha(Linha* linha) {
+
+    // Inicializa um ponteiro auxiliar para percorrer a linha.
+    Linha* aux = linha;
+
+    // Percorre a linha até o final, imprimindo os valores de cada nó.
+    while (aux != NULL) {
+        printf("%d ,", aux->valor);
+
+        //avança com o aux assumindo o valor de proximo
+        aux = aux->proximo;
     }
-    MatrixCell* temp = matrix->head;
-    for (int i = 0; i < matrix->rows; i++) {
-        for (int j = 0; j < matrix->cols; j++) {
-            if (temp != NULL && temp->row == i && temp->col == j) {
-                printf("%d\t", temp->value);
-                temp = temp->nextRow;
-            }
-            else {
-                printf("0\t"); // Se a célula não existir, o valor é 0
-            }
-        }
-        printf("\n");
+
+    // Após imprimir todos os valores da linha, imprime uma nova linha para separar das próximas impressões.
+    printf("\n");
+
+    return true;
+}
+
+// Função para imprimir os valores de uma linha de uma matriz.
+bool printMatriz(Matriz* matriz) {
+    Matriz* aux = matriz;
+
+    while (aux != NULL) {
+        printLinha(aux->inicioLinha);
+        aux = aux->proximo;
     }
 }
 
+/// Função para carregar uma matriz a partir de um arquivo.
+Matriz* carregarFicheiroMatriz(char* nomeFicheiro)
+{
+    // Ponteiro para o início da linha e para o início da matriz.
+    Linha* inicioLinha = NULL;
+    Matriz* inicioMatriz = NULL;
 
-/// Função para salvar a matriz em um arquivo
-void saveMatrixToFile(Matrix* matrix) {
-    FILE* fp;
-    fp = fopen_s(&fp,FILENAME, "w");
-    if (fp == NULL) {
-        printf("Erro: Não foi possível criar o arquivo %s.\n", FILENAME);
-        exit(1);
+    FILE* file = fopen(nomeFicheiro, "r");
+    if (file == NULL) {
+        printf("Error opening file");
+        return 1;
     }
 
-    MatrixCell* temp = matrix->head;
-    for (int i = 0; i < matrix->rows; i++) {
-        for (int j = 0; j < matrix->cols; j++) {
-            if (temp != NULL && temp->row == i && temp->col == j) {
-                fprintf(fp, "%d\t", temp->value);
-                temp = temp->nextRow;
-            }
-            else {
-                fprintf(fp, "0\t"); // Se a célula não existir, o valor é 0
-            }
+    // Contador para o número total de elementos na matriz.
+    int count = 0;
+
+    int temp;
+    char separador;
+
+    // Lê o arquivo enquanto não chegar ao final.
+    while (fscanf_s(file, "%d%c", &temp, &separador) != EOF)
+    { // EOF end of file
+
+        // Insere o valor lido no início da linha.
+        inicioLinha = inserirDadosInicioLinha(inicioLinha, temp);
+
+       
+
+        // Verifica se o separador indica o final da linha.
+        if (separador == '\n') {
+
+            // Se sim, insere a linha na matriz e reseta o ponteiro para o início da linha.
+            inicioMatriz = inserirNovaLinha(inicioMatriz, inicioLinha);
+            inicioLinha = NULL;
         }
-        fprintf(fp, "\n");
+        // Incrementa o contador de elementos.
+        count++;
     }
 
-    fclose(fp);
-    printf("Matriz salva com sucesso em %s\n", FILENAME);
+    // Fecha o arquivo após a leitura.
+    fclose(file);
+
+    // Insere a última linha na matriz, caso necessário.
+    inicioMatriz = inserirNovaLinha(inicioMatriz, inicioLinha);
+
+    // Atualiza o número total de elementos na matriz.
+    matrizTotal = count;
+
+    // Retorna o ponteiro para o início da matriz.
+    return inicioMatriz;
+}
+
+
+// Função para alterar o valor de um dado em uma matriz.
+bool alterarDado(Matriz* inicio, int linha, int coluna, int novoDado) {
+    // Verifica se a linha é válida (maior que 0).
+    if (linha < 1)
+    {
+        printf("linha invalida");
+    }
+
+    // Verifica se a coluna é válida (maior que 0).
+    if (coluna < 1)
+    {
+        printf("coluna invalida");
+    }
+
+    // Ponteiro para percorrer a lista de Matriz.
+    Matriz* auxMatriz = inicio;
+
+    // Ponteiro para percorrer a lista de Linha.
+    Linha* auxLinha = NULL;
+
+    // Variáveis para armazenar a posição atual da linha e da coluna.
+    int linhaAtual = 1;
+    int colunaAtual = 1;
+
+    // Percorre a lista de Matriz.
+    while (auxMatriz != NULL)
+    {
+        // Se a linha atual for a linha desejada.
+        if (linhaAtual == linha)
+        {
+            // Inicializa o ponteiro para percorrer a lista de Linha.
+            auxLinha = auxMatriz->inicioLinha;
+
+            // Percorre a lista de Linha.
+            while (auxLinha != NULL)
+            {
+
+                // Se a coluna atual for a coluna desejada.
+                if (colunaAtual == coluna)
+                {
+                    // Altera o valor do dado para o novo valor fornecido.
+                    auxLinha->valor = novoDado;
+                    return auxLinha; // Retorna após a alteração.
+                }
+                // Atualiza a coluna atual e avança para o próximo nó da lista de Linha.
+                colunaAtual++;
+                auxLinha = auxLinha->proximo;
+            }
+            // Se chegou aqui, significa que a coluna desejada não foi encontrada.
+            printf("coluna invalida");
+            return;
+        }
+        // Atualiza a linha atual e avança para o próximo nó da lista de Matriz.
+        linhaAtual++;
+        auxMatriz = auxMatriz->proximo;
+    }
+    // Se chegou aqui, significa que a linha desejada não foi encontrada.
+    printf("Linha invalida");
 }

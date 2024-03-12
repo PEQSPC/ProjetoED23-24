@@ -1,46 +1,33 @@
+/**
+ * @file main.c
+ * @author Teles Gomes
+ * @date 2024-03
+ * @author telesgomes96@gmail.com
+ *
+ */
 #include "main.h"
 #include <stdio.h>
 #include <stdbool.h>
+#define FILENAME "matriz.txt"
 
 int main() {
-#pragma region Primeira Pergunta do Trabalho
-	//int x;
-	//int* p1;			//p é apontador para inteiro!!
-	//p1 = &x;			//p fica com o endereço de x
+	Matriz* inicioMatriz = NULL;
+	Linha* inicioLinha = NULL;
 
-	//x = 1;
+	inicioMatriz = carregarFicheiroMatriz(FILENAME);
+	//printMatriz(inicioMatriz);
 
-	//printf("P: %p\n", p1);
-	//printf("&P: %p\n", &p1);
-	//printf("*P: %d\n", *p1);
+	//alterarDado(inicioMatriz, 1, 2, 30);
+	//printMatriz(inicioMatriz);
 
+	//inicioMatriz = removerLinhaExistente(inicioMatriz, 5);
 
-		//Line* inicio = NULL;
-		//Line* p10 = CreateValue(10);
-		//
-		//inicio = Insertintolist(inicio, p10);
+	if (inicioMatriz != NULL) {
+		inicioLinha = inicioMatriz->inicioLinha;
+	}
 
-		//Line* p30 = CreateValue(30);
-
-		//inicio = Insertintolist(inicio, p30);
-
-		////Apontador inicio da Lista
-		//bool aux = ShowallLines(inicio);
-#pragma endregion 
-
-	
-	Matrix* matrix = initializeMatrix(3, 3); /// Inicializa a matriz 3x3
-
-	createMatrixCell(10, 1, 1);
-
-	/// Imprime a matriz
-	printf("Matriz:\n");
-	printMatrix(matrix);
-
-	/// Salva a matriz em um arquivo txt
-	saveMatrixToFile(matrix);
-
-
+	/*inicioMatriz = removerColuna(inicioMatriz, 1);*/
+	printMatriz(inicioMatriz);
 
 	return 0;
 }

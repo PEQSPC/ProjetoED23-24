@@ -1,85 +1,49 @@
 #pragma once
+/**
+ * @file main.h
+ * @author Teles Gomes
+ * @date 2024-03
+ * @author telesgomes96@gmail.com
+ *
+ */
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include <stdbool.h>
 
-#define FILENAME "matriz.txt"
-
-#pragma region Primeira Pergunta do Trabalho
-//typedef struct line {
-//	int value;
-//	struct line* next;
-//}Line;
-//
-///// <summary>
-///// Aloca espaço
-///// </summary>
-///// <param name="x"></param>
-//Line* CreateValue(int value);
-//
-///// <summary> Cria valor na lista</summary>/// <param name="f"></param>/// <param name=""></param>/// <returns></returns>
-//Line* Insertintolist(Line* inicio, Line* novo);
-//
-//
-//
-//bool ShowLine(Line* p);
-//
-///// <summary>Mostra todas as linhas na lista ligada</summary>/// <param name="inicio"></param>/// <returns></returns>
-//bool ShowallLines(Line* inicio);
-
-#pragma endregion
 
 /// <summary>
-/// Estrutura para representar uma celula da matriz
+/// struct para  guardar os valores das celulas  e apontar para o proximo valor
 /// </summary>
-typedef struct MatrixCell {
-    int value;  // Valor da célula
-    int row;    // Indice da linha
-    int col;    // Indice da coluna
-    struct MatrixCell* nextRow;  // Ponteiro para a proxima celula na mesma linha
-    struct MatrixCell* nextCol;  // Ponteiro para a próxima celula na mesma coluna
-} MatrixCell;
+typedef struct linha {
+	int valor;
+	struct linha* proximo;
+}Linha;
 
 
 /// <summary>
-///  Estrutura para representar a matriz
+/// struct onde fica guardado os inicios das listas e a proxima lista
 /// </summary>
-typedef struct Matrix {
-    int rows;           // Numero de linhas
-    int cols;           // Numero de colunas
-    MatrixCell* head;   // Ponteiro para a celula na posicao (0, 0)
-} Matrix;
+typedef struct matriz
+{
+	Linha* inicioLinha;
+	struct matriz* proximo;
+}Matriz;
 
 
-/// <summary>
-/// Inicializa uma matriz na memoria com uma determina dimensao rows and cols
-/// </summary>
-/// <param name="rows"></param>
-/// <param name="cols"></param>
-/// <returns>da return do endereco da matriz</returns>
-Matrix* initializeMatrix(int rows, int cols);
-
-/// <summary>
-/// Imprime a matriz na consola
-/// </summary>
-/// <param name="matrix">Entrada da matriz que quer dar display na consola</param>
-void printMatrix(Matrix* matrix);
+int matrizTotal;
 
 
-/// <summary>
-/// Cria uma celula na matriz
-/// </summary>
-/// <param name="value">valor a adicionar na matriz</param>
-/// <param name="row">escrever as linhas que vai ter a matriz</param>
-/// <param name="col">as colunas que vai ter a matriz</param>
-/// <returns></returns>
-MatrixCell* createMatrixCell(int value, int row, int col);
+ /// <summary>
+ /// Carrega o ficheiro e guardas informaçoes nas structs
+ /// </summary>
+ /// <param name="nomeFicheiro">matriz.txt</param>
+ /// <returns>da return do inicio da matriz</returns>
+ Matriz* carregarFicheiroMatriz(char* nomeFicheiro);
 
-/// <summary>
-/// Adiciona a matriz que entra dum ficheiro txt Matriz.txt
-/// </summary>
-/// <param name="matrix"> Matriz que quer adicionar no ficheiro</param>
-void saveMatrixToFile(Matrix* matrix);
+ bool printLinha(Linha* linha);
+ Linha* inserirDadosInicioLinha(Linha* inicio, int valorInserir);
+ Matriz* inserirNovaLinha(Matriz* inicio, Linha* LinhaInserir);
+ bool alterarDado(Matriz* inicio, int linha, int coluna, int novoDado);
 
-
-
-
+ bool printMatriz(Matriz* matriz);
