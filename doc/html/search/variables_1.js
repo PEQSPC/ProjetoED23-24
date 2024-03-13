@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['head_0',['head',['../struct_matrix.html#a00f308b37a1fb1883cbddcc9f20d6b3c',1,'Matrix']]]
+  ['matriztotal_0',['matrizTotal',['../main_8h.html#a5858babed4e19cef91bd1dfe0ab98820',1,'main.h']]]
 ];

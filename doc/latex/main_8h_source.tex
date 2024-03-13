@@ -1,0 +1,37 @@
+\doxysection{main.\+h}
+\hypertarget{main_8h_source}{}\label{main_8h_source}\index{E:/C/ProjetoFase1/main.h@{E:/C/ProjetoFase1/main.h}}
+\mbox{\hyperlink{main_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00018}\mbox{\hyperlink{structlinha}{00018}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlinha}{linha}}\ \{}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00019}\mbox{\hyperlink{structlinha_a83201786792501b53e667771949a8129}{00019}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structlinha_a83201786792501b53e667771949a8129}{valor}};}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00020}\mbox{\hyperlink{structlinha_ac9103afc46d10446cac3ae1b5cadeb1c}{00020}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlinha}{linha}}*\ \mbox{\hyperlink{structlinha_ac9103afc46d10446cac3ae1b5cadeb1c}{proximo}};}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00021}\mbox{\hyperlink{main_8h_ae8a19c49d76549703b241fb2b5fe8ad3}{00021}}\ \}\mbox{\hyperlink{main_8h_ae8a19c49d76549703b241fb2b5fe8ad3}{Linha}};}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00027}\mbox{\hyperlink{structmatriz}{00027}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmatriz}{matriz}}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00028}00028\ \{}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00029}\mbox{\hyperlink{structmatriz_aeb638277fff03a9c24e4972ac61afe51}{00029}}\ \ \ \ \ \mbox{\hyperlink{structlinha}{Linha}}*\ \mbox{\hyperlink{structmatriz_aeb638277fff03a9c24e4972ac61afe51}{inicioLinha}};}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00030}\mbox{\hyperlink{structmatriz_a551561d5d55e8c652e552a7920727d05}{00030}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmatriz}{matriz}}*\ \mbox{\hyperlink{structmatriz_a551561d5d55e8c652e552a7920727d05}{proximo}};}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00031}\mbox{\hyperlink{main_8h_a08470257cc515c041d28b8b1ba0d77d0}{00031}}\ \}\mbox{\hyperlink{main_8h_a08470257cc515c041d28b8b1ba0d77d0}{Matriz}};}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00034}\mbox{\hyperlink{main_8h_a5858babed4e19cef91bd1dfe0ab98820}{00034}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8h_a5858babed4e19cef91bd1dfe0ab98820}{matrizTotal}};}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00042}00042\ \ \mbox{\hyperlink{structmatriz}{Matriz}}*\ \mbox{\hyperlink{main_8h_ae689da47348fd20b7c125b480e99e62a}{carregarFicheiroMatriz}}(\textcolor{keywordtype}{char}*\ nomeFicheiro);}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00044}00044\ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{main_8h_a20c7c67ce43b16712e49bb5c683c7391}{printLinha}}(\mbox{\hyperlink{structlinha}{Linha}}*\ \mbox{\hyperlink{structlinha}{linha}});}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00045}00045\ \ \mbox{\hyperlink{structlinha}{Linha}}*\ \mbox{\hyperlink{main_8h_ad7448815e74265937ce44a524831000e}{inserirDadosInicioLinha}}(\mbox{\hyperlink{structlinha}{Linha}}*\ inicio,\ \textcolor{keywordtype}{int}\ valorInserir);}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00046}00046\ \ \mbox{\hyperlink{structmatriz}{Matriz}}*\ \mbox{\hyperlink{main_8h_ad06da29ccbeea8759bcf171dce2c8fd1}{inserirNovaLinha}}(\mbox{\hyperlink{structmatriz}{Matriz}}*\ inicio,\ \mbox{\hyperlink{structlinha}{Linha}}*\ LinhaInserir);}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00047}00047\ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{main_8h_a0c195e0337c67fffe184f9c56ee1be72}{alterarDado}}(\mbox{\hyperlink{structmatriz}{Matriz}}*\ inicio,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structlinha}{linha}},\ \textcolor{keywordtype}{int}\ coluna,\ \textcolor{keywordtype}{int}\ novoDado);}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00049}00049\ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{main_8h_a575e07dc0fefeaab8498c0d9b4b8ef44}{printMatriz}}(\mbox{\hyperlink{structmatriz}{Matriz}}*\ \mbox{\hyperlink{structmatriz}{matriz}});}
+
+\end{DoxyCode}

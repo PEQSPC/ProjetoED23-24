@@ -13,6 +13,37 @@
 #define FILENAME "matriz.txt"
 
 
+Linha* inserirDadosFimLinha(Linha* inicio, int valorInserir) {
+    // Alocação de Memória para o novo nó
+    Linha* novo = (Linha*)malloc(sizeof(Linha));
+    if (novo == NULL) return NULL;
+
+    // Define o valor do novo nó como o valor fornecido.
+    novo->valor = valorInserir;
+    novo->proximo = NULL; // O próximo do novo nó será NULL, pois ele será o último nó.
+
+    // Se a lista estiver vazia, o novo nó será o início da lista.
+    if (inicio == NULL) {
+        inicio = novo;
+    }
+    else {
+        Linha* aux = inicio;
+
+        // Percorre a lista até encontrar o último nó.
+        while (aux->proximo != NULL) {
+            aux = aux->proximo;
+        }
+
+        // Agora que estamos no último nó, definimos o próximo como o novo nó.
+        aux->proximo = novo;
+    }
+
+    return inicio; // Retorna o ponteiro para o início da lista.
+}
+
+
+
+
  /**
   * @brief Insere uma linha no inicio da Lista.
   *
@@ -22,32 +53,38 @@
   * @author teles
   *
   */
-// Função para inserir um novo nó no início de uma lista ligada da Linha.
 Linha* inserirDadosInicioLinha(Linha* inicio, int valorInserir) {
     if (valorInserir == NULL) return inicio;
-    if (inicio == NULL)
-        inicio = valorInserir;
-    //Alocação de Memoria
-    Linha* aux = (Linha*)malloc(sizeof(Linha));
-    if (aux == NULL) return NULL;
+
+    // Alocação de Memoria para o novo nó
+    Linha* novo = (Linha*)malloc(sizeof(Linha));
+    if (novo == NULL) return NULL;
 
     // Define o valor do novo nó como o valor fornecido.
-    aux->valor = valorInserir;
+    novo->valor = valorInserir;
 
     // O próximo nó após o novo nó será o nó atual do início da lista.
-    aux->proximo = inicio;
+    novo->proximo = inicio;
 
     // Retorna o ponteiro para o novo nó, que agora se tornou o início da lista.
-    return aux;
+    return novo;
 }
 
-// Função para inserir uma nova linha no início de uma lista ligada de Matriz.
+/**
+ * Insere uma lista na matriz .
+ * 
+ * \param inicio
+ * \param linhaInserir
+ * \return 
+ */
 Matriz* inserirNovaLinha(Matriz* inicio, Linha* linhaInserir) {
-    Matriz* nova;
-    nova = malloc(sizeof(Matriz));
+    // Alocação de Memoria para a nova matriz
+    Matriz* nova = (Matriz*)malloc(sizeof(Matriz));
+    if (nova == NULL) return NULL;
 
     // Define o início da linha da nova matriz como a linha a ser inserida.
     nova->inicioLinha = linhaInserir;
+
     // O próximo nó após a nova matriz será o nó atual do início da lista.
     nova->proximo = inicio;
 
@@ -55,9 +92,13 @@ Matriz* inserirNovaLinha(Matriz* inicio, Linha* linhaInserir) {
     return nova;
 }
 
-// Função para imprimir os valores de uma linha de uma matriz.
+/**
+ * Função para imprimir os valores de uma linha de uma matriz..
+ * 
+ * \param linha
+ * \return true or false 
+ */
 bool printLinha(Linha* linha) {
-
     // Inicializa um ponteiro auxiliar para percorrer a linha.
     Linha* aux = linha;
 
@@ -65,7 +106,7 @@ bool printLinha(Linha* linha) {
     while (aux != NULL) {
         printf("%d ,", aux->valor);
 
-        //avança com o aux assumindo o valor de proximo
+        // Avança para o próximo nó na linha.
         aux = aux->proximo;
     }
 
@@ -75,17 +116,33 @@ bool printLinha(Linha* linha) {
     return true;
 }
 
-// Função para imprimir os valores de uma linha de uma matriz.
+/**
+ * Função para imprimir os valores de uma matriz..
+ * 
+ * \param matriz dar entrada do inicio da matriz 
+ * \return true or false
+ */
 bool printMatriz(Matriz* matriz) {
+    if (matriz == NULL) {
+        printf("Matriz vazia.\n");
+        return false;
+    }
+
     Matriz* aux = matriz;
 
     while (aux != NULL) {
         printLinha(aux->inicioLinha);
         aux = aux->proximo;
     }
-}
 
-/// Função para carregar uma matriz a partir de um arquivo.
+    return true;
+}
+/**
+ * Função para carregar uma matriz a partir de um arquivo..
+ * 
+ * \param nomeFicheiro
+ * \return 
+ */
 Matriz* carregarFicheiroMatriz(char* nomeFicheiro)
 {
     // Ponteiro para o início da linha e para o início da matriz.
@@ -110,7 +167,7 @@ Matriz* carregarFicheiroMatriz(char* nomeFicheiro)
 
         // Insere o valor lido no início da linha.
         inicioLinha = inserirDadosInicioLinha(inicioLinha, temp);
-
+        printf("%d\t", temp);
        
 
         // Verifica se o separador indica o final da linha.
@@ -119,6 +176,7 @@ Matriz* carregarFicheiroMatriz(char* nomeFicheiro)
             // Se sim, insere a linha na matriz e reseta o ponteiro para o início da linha.
             inicioMatriz = inserirNovaLinha(inicioMatriz, inicioLinha);
             inicioLinha = NULL;
+            printf("\n");
         }
         // Incrementa o contador de elementos.
         count++;
@@ -128,7 +186,7 @@ Matriz* carregarFicheiroMatriz(char* nomeFicheiro)
     fclose(file);
 
     // Insere a última linha na matriz, caso necessário.
-    inicioMatriz = inserirNovaLinha(inicioMatriz, inicioLinha);
+ //   inicioMatriz = inserirNovaLinha(inicioMatriz, inicioLinha);
 
     // Atualiza o número total de elementos na matriz.
     matrizTotal = count;

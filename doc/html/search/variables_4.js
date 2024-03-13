@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_0',['value',['../struct_matrix_cell.html#ac4f474c82e82cbb89ca7c36dd52be0ed',1,'MatrixCell']]]
+  ['startline_0',['startline',['../structmatrix.html#a13d3416e842562bff328ae6b48e31dc1',1,'matrix']]]
 ];

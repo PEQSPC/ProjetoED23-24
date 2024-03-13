@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "E:\\C\\ProjetoFase1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7AFC3F04-12F2-43F7-B07F-C827D270B98A}|ProjetoFase1.vcxproj|E:\\C\\ProjetoFase1\\functions.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7AFC3F04-12F2-43F7-B07F-C827D270B98A}|ProjetoFase1.vcxproj|solutionrelative:functions.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{4D936B1D-BD51-4288-9B9A-0DC9A4A33024}|..\\Aulas\\Aulas.vcxproj|E:\\C\\Aulas\\FunctionFiles.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AFC3F04-12F2-43F7-B07F-C827D270B98A}|ProjetoFase1.vcxproj|E:\\C\\ProjetoFase1\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7AFC3F04-12F2-43F7-B07F-C827D270B98A}|ProjetoFase1.vcxproj|solutionrelative:main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{4D936B1D-BD51-4288-9B9A-0DC9A4A33024}|..\\Aulas\\Aulas.vcxproj|E:\\C\\Aulas\\Header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AFC3F04-12F2-43F7-B07F-C827D270B98A}|ProjetoFase1.vcxproj|E:\\C\\ProjetoFase1\\main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7AFC3F04-12F2-43F7-B07F-C827D270B98A}|ProjetoFase1.vcxproj|solutionrelative:main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{4D936B1D-BD51-4288-9B9A-0DC9A4A33024}|..\\Aulas\\Aulas.vcxproj|E:\\C\\Aulas\\Function.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D936B1D-BD51-4288-9B9A-0DC9A4A33024}|..\\Aulas\\Aulas.vcxproj|E:\\C\\Aulas\\Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +22,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Header.h",
+              "DocumentMoniker": "E:\\C\\Aulas\\Header.h",
+              "RelativeDocumentMoniker": "..\\Aulas\\Header.h",
+              "ToolTip": "E:\\C\\Aulas\\Header.h",
+              "RelativeToolTip": "..\\Aulas\\Header.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-12T18:16:51.508Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FunctionFiles.c",
+              "DocumentMoniker": "E:\\C\\Aulas\\FunctionFiles.c",
+              "RelativeDocumentMoniker": "..\\Aulas\\FunctionFiles.c",
+              "ToolTip": "E:\\C\\Aulas\\FunctionFiles.c",
+              "RelativeToolTip": "..\\Aulas\\FunctionFiles.c",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAEkAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-03-13T10:52:30.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Function.c",
+              "DocumentMoniker": "E:\\C\\Aulas\\Function.c",
+              "RelativeDocumentMoniker": "..\\Aulas\\Function.c",
+              "ToolTip": "E:\\C\\Aulas\\Function.c",
+              "RelativeToolTip": "..\\Aulas\\Function.c",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAOIAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-03-13T10:49:43.262Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -34,41 +74,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "main.c",
-              "DocumentMoniker": "E:\\C\\ProjetoFase1\\main.c",
-              "RelativeDocumentMoniker": "main.c",
-              "ToolTip": "E:\\C\\ProjetoFase1\\main.c",
-              "RelativeToolTip": "main.c",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "Source.c",
+              "DocumentMoniker": "E:\\C\\Aulas\\Source.c",
+              "RelativeDocumentMoniker": "..\\Aulas\\Source.c",
+              "ToolTip": "E:\\C\\Aulas\\Source.c",
+              "RelativeToolTip": "..\\Aulas\\Source.c",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-03-12T14:31:36.184Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "main.h",
-              "DocumentMoniker": "E:\\C\\ProjetoFase1\\main.h",
-              "RelativeDocumentMoniker": "main.h",
-              "ToolTip": "E:\\C\\ProjetoFase1\\main.h",
-              "RelativeToolTip": "main.h",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAADAAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-03-12T14:32:15.433Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "functions.c",
-              "DocumentMoniker": "E:\\C\\ProjetoFase1\\functions.c",
-              "RelativeDocumentMoniker": "functions.c",
-              "ToolTip": "E:\\C\\ProjetoFase1\\functions.c",
-              "RelativeToolTip": "functions.c",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAE4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-03-12T14:31:47.362Z",
+              "WhenOpened": "2024-03-13T09:27:11.405Z",
               "EditorCaption": ""
             }
           ]
