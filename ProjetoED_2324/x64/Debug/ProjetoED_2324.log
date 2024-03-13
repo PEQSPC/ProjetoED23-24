@@ -1,0 +1,14 @@
+﻿  main.c
+  Source.c
+E:\C\ProjetoED_2324\ProjetoED_2324\Source.c(356,27): warning C4473: 'fscanf_s' : not enough arguments passed for format string
+  E:\C\ProjetoED_2324\ProjetoED_2324\Source.c(356,27):
+  placeholders and their parameters expect 3 variadic arguments, but 2 were provided
+  E:\C\ProjetoED_2324\ProjetoED_2324\Source.c(356,27):
+  the missing variadic argument 3 is required by format string '%c'
+  E:\C\ProjetoED_2324\ProjetoED_2324\Source.c(356,27):
+  this argument is used as a buffer size
+  
+E:\C\ProjetoED_2324\ProjetoED_2324\Source.c(406,16): warning C4566: character represented by universal-character-name '\uFFFD' cannot be represented in the current code page (1252)
+  Generating Code...
+E:\C\ProjetoED_2324\ProjetoED_2324\Source.c(224,1): warning C4716: 'printMatriz': must return a value
+  ProjetoED_2324.vcxproj -> E:\C\ProjetoED_2324\x64\Debug\ProjetoED_2324.exe
