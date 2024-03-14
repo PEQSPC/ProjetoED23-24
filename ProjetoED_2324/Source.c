@@ -8,6 +8,8 @@
  *********************************************************************/
 #include "Header.h"
 #include <stdio.h>
+#include <stdint.h>
+
 
 
  /**
@@ -98,7 +100,7 @@ Matriz* removerLinhaExistente(Matriz* inicio, int linhaParaRemover) {
 }
 
 /**
- * Fun��o para remover uma coluna de uma lista  da Matriz...
+ * Funcao para remover uma coluna de uma lista  da Matriz...
  *
  * \param inicio
  * \param colunaParaRemover
@@ -235,7 +237,7 @@ bool printMatriz(Matriz* matriz) {
  * \param novoDado
  * \return
  */
-bool alterarDado(Matriz* inicio, int linha, int coluna, int novoDado) {
+bool alterarvalor(Matriz* inicio, int linha, int coluna, int novoDado) {
     // Verifica se a linha e valida
     if (linha < 1)
     {
@@ -357,7 +359,7 @@ Matriz* carregarFicheiroMatriz(char* nomeFicheiro)
     {
         // Insere o valor lido no inicio da linha.
         inicioLinha = inserirDadosFimLinha(inicioLinha, temp);
-        printf("%d;", temp);
+        printf("%d\t", temp);
 
         // Verifica se o separador indica o final da linha.
         if (icon == '\n') {
@@ -370,7 +372,7 @@ Matriz* carregarFicheiroMatriz(char* nomeFicheiro)
                 matriz_atual = inicioMatriz;
             }
             else {
-                // Sen�o, insere a linha no final da matriz existente.
+                // Senao, insere a linha no final da matriz existente.
                 matriz_atual->proximo = (Matriz*)malloc(sizeof(Matriz));
                 matriz_atual = matriz_atual->proximo;
                 matriz_atual->inicioLinha = inicioLinha;
@@ -379,6 +381,7 @@ Matriz* carregarFicheiroMatriz(char* nomeFicheiro)
 
             // Reinicia o ponteiro para o inicio da linha.
             inicioLinha = NULL;
+            matrizTotal++;
             printf("\n");
         }
 
@@ -419,7 +422,14 @@ Matriz* gravarmatrix(Matriz* iniciomatriz, char* filename) {
         Linha* linha_atual = matriz_atual->inicioLinha;
 
         while (linha_atual != NULL) {
-            fprintf(arquivo, "%d ", linha_atual->valor);
+            if (linha_atual->proximo == NULL) {
+                fprintf(arquivo, "%d", linha_atual->valor);
+            }
+            else
+            {
+                fprintf(arquivo, "%d;", linha_atual->valor);
+            }
+           
             linha_atual = linha_atual->proximo;
         }
 
@@ -430,4 +440,158 @@ Matriz* gravarmatrix(Matriz* iniciomatriz, char* filename) {
     fclose(arquivo);
     printf("Matriz gravada com sucesso no arquivo: %s\n", filename);
     return iniciomatriz;
+}
+
+/**
+ * Funcao para fazer a soma total da matriz sem repetir coluna e linha,testado com array de 5x5 .
+ * 
+ * \param iniciomatriz
+ * \return da return da soma total da matriz sem repetir coluna e linha
+ */
+int somamatrix(Matriz* iniciomatriz) { 
+    //int* array;
+    // Chama a função para criar o array
+    //array = criarArray(matrizTotal);
+
+    //ter um array com os valores da row e coluna que se podem usar
+    int coluna[] = { 1, 2, 3, 4, 5 };
+    int tamanho = sizeof(coluna) / sizeof(coluna[0]);
+
+
+    
+
+    // Verifica se a coluna e valida
+    /*if (cols < 1)
+    {
+        printf("coluna invalida");
+    }*/
+
+
+    Matriz* auxMatriz = iniciomatriz;
+
+    Linha* auxLinha = NULL;
+    int linhaentrar = 1;
+    int colunaentrar = 1;
+    // Armazena as posicoes 
+    int linha_Atual = 1;
+    int coluna_Atual = 1;
+    int valor_maior = 1;
+    int guardar_coluna_do_maior = 0;
+    int guardar_linha_do_maior = 0;
+    int soma = 0;
+    // Percorre a lista de Matriz.
+    while (auxMatriz != NULL)
+    {
+        //for esta mal tempo calcular o tamanho do
+        for (int i = 0; i < tamanho; i++) {
+            
+                // Inicializa o ponteiro para percorrer a lista de Linha.
+                auxLinha = auxMatriz->inicioLinha;
+
+                // Percorre a lista de Linha.
+                while (auxLinha != NULL)
+                {
+
+                    if (valorExiste(coluna, tamanho, coluna_Atual)) {
+
+                        // Se a coluna atual for a coluna desejada.
+                        if (auxLinha->valor > valor_maior) {
+                            valor_maior = auxLinha->valor;
+                            guardar_coluna_do_maior = coluna_Atual;
+                            guardar_linha_do_maior = linha_Atual;
+                            // Removendo o elemento de índice 2 (valor 3)
+                          //  removerElemento(rows, &tamanho, linha_Atual - 1);
+                        }
+
+
+                    }
+      
+                    // Atualiza a coluna atual e avanca para a proxima lista
+                    coluna_Atual++;
+                    auxLinha = auxLinha->proximo;
+                }
+               
+          
+
+            i = tamanho;
+        }
+       
+
+        // conta as listas que foram percorridas
+        linha_Atual++;
+        coluna_Atual = 1;
+        soma += valor_maior;
+        valor_maior = 0;
+      //  tamanho = removerElemento(coluna, tamanho, guardar_coluna_do_maior - 1);
+        int index = guardar_coluna_do_maior - 1;
+        int size = tamanho;
+
+        if (index < 0) {
+            printf("Índice inválido\n");
+            return;
+        }
+        if (size == 2) {
+            index = 1;
+        }
+        if (size == 1) {
+            index = 0;
+        }
+        for (int i = index; i < size; ++i) {
+            coluna[i] = coluna[i + 1];
+        }
+        tamanho = size - 1;
+       /* printf("Array apos a remocao:\n");
+        for (int i = 0; i < tamanho; ++i) {
+            printf("%d ", coluna[i]);
+        }
+        printf("\n");*/
+        guardar_coluna_do_maior = 0;
+        guardar_linha_do_maior = 0;
+        
+        //ir para a proxima lista
+        auxMatriz = auxMatriz->proximo;
+
+        
+    }
+    
+    return soma;
+}
+
+
+int removerElemento(int array[], int size, int index) {
+    if (index < 0 || index >= size) {
+        printf("Indice invalido\n");
+        return;
+    }
+
+    for (int i = index; i < size - 1; ++i) {
+        array[i] = array[i + 1];
+    }
+
+    return size - 1;
+}
+
+bool valorExiste(int array[], int tamanho, int valor) {
+    for (int i = 0; i < tamanho; i++) {
+        if (array[i] == valor) {
+            return true; // Valor encontrado no array
+        }
+    }
+    return false; // Valor não encontrado no array
+}
+
+int* criarArray(int tamanho) {
+    int* array = malloc(tamanho * sizeof(int)); // Aloca memória para o array
+
+    if (array == NULL) { // Verifica se a alocação foi bem-sucedida
+        printf("Erro ao alocar memória.\n");
+        return NULL;
+    }
+
+    // Preenche o array com números de 1 até o tamanho da matriz
+    for (int i = 0; i < tamanho; i++) {
+        array[i] = i + 1;
+    }
+
+    return array;
 }

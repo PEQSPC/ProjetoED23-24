@@ -8,16 +8,17 @@
 #include "Header.h"
 #include <stdio.h>
 #include <stdbool.h>
-#define FILENAME "matriz.txt"
+#define FILENAME "E:\\C\\ProjetoED_2324\\matriz.txt"
 
 int main() {
 	Matriz* inicioMatriz = NULL;
 	Linha* inicioLinha = NULL;
+	int soma = 0;
 
 	inicioMatriz = carregarFicheiroMatriz(FILENAME);
 	//printMatriz(inicioMatriz);
 
-	alterarDado(inicioMatriz, 1, 2, 30);
+	//alterarvalor(inicioMatriz, 1, 2, 30);
 	//printMatriz(inicioMatriz);
 
 	//inicioMatriz = removerLinhaExistente(inicioMatriz, 5);
@@ -29,6 +30,7 @@ int main() {
 	/*inicioMatriz = removerColuna(inicioMatriz, 1);*/
 	printMatriz(inicioMatriz);
 	gravarmatrix(inicioMatriz,FILENAME);
-
+	soma = somamatrix(inicioMatriz);
+	printf("Soma: %d", soma);
 	return 0;
 }

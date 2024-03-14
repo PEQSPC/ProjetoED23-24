@@ -43,10 +43,13 @@ Matriz* carregarFicheiroMatriz(char* nomeFicheiro);
 bool printLinha(Linha* linha);
 Linha* inserirDadosInicioLinha(Linha* inicio, int valorInserir);
 Matriz* inserirNovaLinha(Matriz* inicio, Linha* LinhaInserir);
-bool alterarDado(Matriz* inicio, int linha, int coluna, int novoDado);
+bool alterarvalor(Matriz* inicio, int linha, int coluna, int novoDado);
 bool printMatriz(Matriz* matriz);
-
 Matriz* removerLinhaExistente(Matriz* inicio, int linhaParaRemover);
 Linha* removerColunaExistente(Linha* inicio, int colunaParaRemover);
 Matriz* removerColuna(Matriz* inicio, int colunaParaRemover);
 Matriz* gravarmatrix(Matriz* iniciomatriz, char* filename);
+int somamatrix(Matriz* iniciomatriz);
+int removerElemento(int array[], int size, int index);
+bool valorExiste(int array[], int tamanho, int valor);
+int* criarArray(int tamanho);
