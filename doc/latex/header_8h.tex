@@ -1,0 +1,415 @@
+\doxysection{Projeto\+ED\+\_\+2324/header.h File Reference}
+\label{header_8h}\index{ProjetoED\_2324/header.h@{ProjetoED\_2324/header.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ linha}
+\begin{DoxyCompactList}\small\item\em struct para guardar os valores das celulas e apontar para o proximo valor \end{DoxyCompactList}\item 
+struct \textbf{ matriz}
+\begin{DoxyCompactList}\small\item\em struct onde fica guardado os inicios das listas e a proxima lista \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ FILENAME}~"{}matriz.\+txt"{}
+\item 
+\#define \textbf{ FILENAMEALT}~"{}matriz\+\_\+alterada.\+txt"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \textbf{ linha} \textbf{ Linha}
+\begin{DoxyCompactList}\small\item\em struct para guardar os valores das celulas e apontar para o proximo valor \end{DoxyCompactList}\item 
+typedef struct \textbf{ matriz} \textbf{ Matriz}
+\begin{DoxyCompactList}\small\item\em struct onde fica guardado os inicios das listas e a proxima lista \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Matriz} $\ast$ \textbf{ carregar\+Ficheiro\+Matriz} (char $\ast$nome\+Ficheiro)
+\item 
+bool \textbf{ print\+Linha} (\textbf{ Linha} $\ast$\textbf{ linha})
+\item 
+\textbf{ Linha} $\ast$ \textbf{ inserir\+Dados\+Inicio\+Linha} (\textbf{ Linha} $\ast$inicio, int valor\+Inserir)
+\item 
+\textbf{ Matriz} $\ast$ \textbf{ inserir\+Nova\+Linha} (\textbf{ Matriz} $\ast$inicio, \textbf{ Linha} $\ast$Linha\+Inserir)
+\item 
+bool \textbf{ alterarvalor} (\textbf{ Matriz} $\ast$inicio, int \textbf{ linha}, int coluna, int novo\+Dado)
+\item 
+bool \textbf{ print\+Matriz} (\textbf{ Matriz} $\ast$\textbf{ matriz})
+\item 
+\textbf{ Matriz} $\ast$ \textbf{ remover\+Linha\+Existente} (\textbf{ Matriz} $\ast$inicio, int linha\+Para\+Remover)
+\item 
+\textbf{ Linha} $\ast$ \textbf{ remover\+Coluna\+Existente} (\textbf{ Linha} $\ast$inicio, int coluna\+Para\+Remover)
+\item 
+\textbf{ Matriz} $\ast$ \textbf{ remover\+Coluna} (\textbf{ Matriz} $\ast$inicio, int coluna\+Para\+Remover)
+\item 
+\textbf{ Matriz} $\ast$ \textbf{ gravarmatrix} (\textbf{ Matriz} $\ast$iniciomatriz, char $\ast$filename)
+\item 
+int \textbf{ somamatrix} (\textbf{ Matriz} $\ast$iniciomatriz)
+\item 
+int \textbf{ remover\+Elemento} (int array[$\,$], int size, int index)
+\item 
+bool \textbf{ valor\+Existe} (int array[$\,$], int tamanho, int valor)
+\item 
+int $\ast$ \textbf{ criar\+Array} (int tamanho)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ matriz\+Total}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\label{header_8h_a8de29f7c8bbf1a81cc6e71ac602032d3} 
+\index{header.h@{header.h}!FILENAME@{FILENAME}}
+\index{FILENAME@{FILENAME}!header.h@{header.h}}
+\doxysubsubsection{FILENAME}
+{\footnotesize\ttfamily \#define FILENAME~"{}matriz.\+txt"{}}
+
+
+
+Definition at line \textbf{ 13} of file \textbf{ header.\+h}.
+
+\label{header_8h_a2308b1b1ff275055435fa23341509d1e} 
+\index{header.h@{header.h}!FILENAMEALT@{FILENAMEALT}}
+\index{FILENAMEALT@{FILENAMEALT}!header.h@{header.h}}
+\doxysubsubsection{FILENAMEALT}
+{\footnotesize\ttfamily \#define FILENAMEALT~"{}matriz\+\_\+alterada.\+txt"{}}
+
+
+
+Definition at line \textbf{ 14} of file \textbf{ header.\+h}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\label{header_8h_ae8a19c49d76549703b241fb2b5fe8ad3} 
+\index{header.h@{header.h}!Linha@{Linha}}
+\index{Linha@{Linha}!header.h@{header.h}}
+\doxysubsubsection{Linha}
+{\footnotesize\ttfamily typedef struct \textbf{ linha} \textbf{ Linha}}
+
+
+
+struct para guardar os valores das celulas e apontar para o proximo valor 
+
+\label{header_8h_a08470257cc515c041d28b8b1ba0d77d0} 
+\index{header.h@{header.h}!Matriz@{Matriz}}
+\index{Matriz@{Matriz}!header.h@{header.h}}
+\doxysubsubsection{Matriz}
+{\footnotesize\ttfamily typedef struct \textbf{ matriz} \textbf{ Matriz}}
+
+
+
+struct onde fica guardado os inicios das listas e a proxima lista 
+
+
+
+\doxysubsection{Function Documentation}
+\label{header_8h_ac4c67843d3393eabbaacdcbc6107e12f} 
+\index{header.h@{header.h}!alterarvalor@{alterarvalor}}
+\index{alterarvalor@{alterarvalor}!header.h@{header.h}}
+\doxysubsubsection{alterarvalor()}
+{\footnotesize\ttfamily bool alterarvalor (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{inicio,  }\item[{int}]{linha,  }\item[{int}]{coluna,  }\item[{int}]{novo\+Dado }\end{DoxyParamCaption})}
+
+GG 2024 Altera Valor na linha onde se escolhe na entrada de dados a linha e coluna do valor para alterar
+
+Funcao para alterar o valor de um valor em uma matriz..
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em linha} & \\
+\hline
+{\em coluna} & \\
+\hline
+{\em novo\+Dado} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 251} of file \textbf{ functions.\+c}.
+
+\label{header_8h_ae689da47348fd20b7c125b480e99e62a} 
+\index{header.h@{header.h}!carregarFicheiroMatriz@{carregarFicheiroMatriz}}
+\index{carregarFicheiroMatriz@{carregarFicheiroMatriz}!header.h@{header.h}}
+\doxysubsubsection{carregarFicheiroMatriz()}
+{\footnotesize\ttfamily \textbf{ Matriz} $\ast$ carregar\+Ficheiro\+Matriz (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome\+Ficheiro }\end{DoxyParamCaption})}
+
+GG 2024 Carrega o ficheiro e guardas informacoes nas structs linha vai corresponder os valores da matriz,a struct matriz vai guardar o incio da linha e proxima linha
+
+Funcao para carregar uma matriz a partir de um arquivo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+Ficheiro} & matriz.\+txt \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+do inicio da matriz 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 66} of file \textbf{ functions\+\_\+files.\+c}.
+
+\label{header_8h_a4dea0c43c466428b8bda185f86a504e2} 
+\index{header.h@{header.h}!criarArray@{criarArray}}
+\index{criarArray@{criarArray}!header.h@{header.h}}
+\doxysubsubsection{criarArray()}
+{\footnotesize\ttfamily int $\ast$ criar\+Array (\begin{DoxyParamCaption}\item[{int}]{tamanho }\end{DoxyParamCaption})}
+
+GG 2024 Funcao secundaria para ser usada na soma ,cria um array de 0 a int tamanho de valor de entrada 
+
+Definition at line \textbf{ 478} of file \textbf{ functions.\+c}.
+
+\label{header_8h_ac41a19955aab10d9af5fc415bd653b65} 
+\index{header.h@{header.h}!gravarmatrix@{gravarmatrix}}
+\index{gravarmatrix@{gravarmatrix}!header.h@{header.h}}
+\doxysubsubsection{gravarmatrix()}
+{\footnotesize\ttfamily \textbf{ Matriz} $\ast$ gravarmatrix (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{iniciomatriz,  }\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+GG 2024 Grava a matriz em memoria num ficheiro txt
+
+Gravar a matriz depois de tudo o processo no main ,gravar o resultado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iniciomatriz} & entrada do incio da matriz \\
+\hline
+{\em filename} & matriz.\+txt \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inicio da matriz 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 21} of file \textbf{ functions\+\_\+files.\+c}.
+
+\label{header_8h_ad7448815e74265937ce44a524831000e} 
+\index{header.h@{header.h}!inserirDadosInicioLinha@{inserirDadosInicioLinha}}
+\index{inserirDadosInicioLinha@{inserirDadosInicioLinha}!header.h@{header.h}}
+\doxysubsubsection{inserirDadosInicioLinha()}
+{\footnotesize\ttfamily \textbf{ Linha} $\ast$ inserir\+Dados\+Inicio\+Linha (\begin{DoxyParamCaption}\item[{\textbf{ Linha} $\ast$}]{inicio,  }\item[{int}]{valor\+Inserir }\end{DoxyParamCaption})}
+
+GG 2024 Insere dados numa linha no inicio
+
+Funcao para inserir um novo inicio de uma lista ligada da Linha.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em valor\+Inserir} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 21} of file \textbf{ functions.\+c}.
+
+\label{header_8h_ad06da29ccbeea8759bcf171dce2c8fd1} 
+\index{header.h@{header.h}!inserirNovaLinha@{inserirNovaLinha}}
+\index{inserirNovaLinha@{inserirNovaLinha}!header.h@{header.h}}
+\doxysubsubsection{inserirNovaLinha()}
+{\footnotesize\ttfamily \textbf{ Matriz} $\ast$ inserir\+Nova\+Linha (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{inicio,  }\item[{\textbf{ Linha} $\ast$}]{linha\+Inserir }\end{DoxyParamCaption})}
+
+GG 2024 Insere a linha na matriz
+
+Funcao para adcicionar uma lista a matriz
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em linha\+Inserir} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 42} of file \textbf{ functions.\+c}.
+
+\label{header_8h_a20c7c67ce43b16712e49bb5c683c7391} 
+\index{header.h@{header.h}!printLinha@{printLinha}}
+\index{printLinha@{printLinha}!header.h@{header.h}}
+\doxysubsubsection{printLinha()}
+{\footnotesize\ttfamily bool print\+Linha (\begin{DoxyParamCaption}\item[{\textbf{ Linha} $\ast$}]{linha }\end{DoxyParamCaption})}
+
+GG 2024 Imprime na consola uma linha da matriz
+
+Funcao para imprimir os valores de uma linha de uma matriz..
+
+
+\begin{DoxyParams}{Parameters}
+{\em linha} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 193} of file \textbf{ functions.\+c}.
+
+\label{header_8h_a575e07dc0fefeaab8498c0d9b4b8ef44} 
+\index{header.h@{header.h}!printMatriz@{printMatriz}}
+\index{printMatriz@{printMatriz}!header.h@{header.h}}
+\doxysubsubsection{printMatriz()}
+{\footnotesize\ttfamily bool print\+Matriz (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{matriz }\end{DoxyParamCaption})}
+
+GG 2024 Imprime a matriz toda
+
+Funcao para imprimir os valores de uma linha de uma matriz..
+
+
+\begin{DoxyParams}{Parameters}
+{\em matriz} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 225} of file \textbf{ functions.\+c}.
+
+\label{header_8h_a399c90787ea0c1484d5504ed62067c0e} 
+\index{header.h@{header.h}!removerColuna@{removerColuna}}
+\index{removerColuna@{removerColuna}!header.h@{header.h}}
+\doxysubsubsection{removerColuna()}
+{\footnotesize\ttfamily \textbf{ Matriz} $\ast$ remover\+Coluna (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{inicio,  }\item[{int}]{coluna\+Para\+Remover }\end{DoxyParamCaption})}
+
+GG 2024 Remove coluna da matriz por entrada de valor na function
+
+Funcao para remover uma coluna de uma lista da Matriz...
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em coluna\+Para\+Remover} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 113} of file \textbf{ functions.\+c}.
+
+\label{header_8h_af361aa31f0afbb29143bc58022ec594a} 
+\index{header.h@{header.h}!removerColunaExistente@{removerColunaExistente}}
+\index{removerColunaExistente@{removerColunaExistente}!header.h@{header.h}}
+\doxysubsubsection{removerColunaExistente()}
+{\footnotesize\ttfamily \textbf{ Linha} $\ast$ remover\+Coluna\+Existente (\begin{DoxyParamCaption}\item[{\textbf{ Linha} $\ast$}]{inicio,  }\item[{int}]{coluna\+Para\+Remover }\end{DoxyParamCaption})}
+
+GG 2024 Remove uma coluna da matriz com o uso da struct linha,function usada no remover\+Coluna
+
+Fuction to assist remover\+Coluna.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em coluna\+Para\+Remover} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 140} of file \textbf{ functions.\+c}.
+
+\label{header_8h_add5cc53969d5aab51c064502f7d853c9} 
+\index{header.h@{header.h}!removerElemento@{removerElemento}}
+\index{removerElemento@{removerElemento}!header.h@{header.h}}
+\doxysubsubsection{removerElemento()}
+{\footnotesize\ttfamily int remover\+Elemento (\begin{DoxyParamCaption}\item[{int}]{array[$\,$],  }\item[{int}]{size,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+GG 2024 Funcao secundaria para ser usada na soma matrix,remove um elemento de um array 
+
+Definition at line \textbf{ 456} of file \textbf{ functions.\+c}.
+
+\label{header_8h_a7658c59358140ef08a11f9c78d310ae3} 
+\index{header.h@{header.h}!removerLinhaExistente@{removerLinhaExistente}}
+\index{removerLinhaExistente@{removerLinhaExistente}!header.h@{header.h}}
+\doxysubsubsection{removerLinhaExistente()}
+{\footnotesize\ttfamily \textbf{ Matriz} $\ast$ remover\+Linha\+Existente (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{inicio,  }\item[{int}]{linha\+Para\+Remover }\end{DoxyParamCaption})}
+
+GG 2024 Remove uma linha da matriz
+
+Funcao para remover uma linha de uma lista ligada de Matriz..
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em linha\+Para\+Remover} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+da matriz sem a coluna 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 63} of file \textbf{ functions.\+c}.
+
+\label{header_8h_aa9525e239572dcf3797c94ace2141e95} 
+\index{header.h@{header.h}!somamatrix@{somamatrix}}
+\index{somamatrix@{somamatrix}!header.h@{header.h}}
+\doxysubsubsection{somamatrix()}
+{\footnotesize\ttfamily int somamatrix (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{iniciomatriz }\end{DoxyParamCaption})}
+
+GG 2024 Soma os valores mais altos da matriz sem repetir colunas nem linhas
+
+Funcao para fazer a soma total da matriz sem repetir coluna e linha,testado com array de 5x5 .
+
+
+\begin{DoxyParams}{Parameters}
+{\em iniciomatriz} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+da return da soma total da matriz sem repetir coluna e linha 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 346} of file \textbf{ functions.\+c}.
+
+\label{header_8h_ac3b15e873afb39ef69029a9bc8179209} 
+\index{header.h@{header.h}!valorExiste@{valorExiste}}
+\index{valorExiste@{valorExiste}!header.h@{header.h}}
+\doxysubsubsection{valorExiste()}
+{\footnotesize\ttfamily bool valor\+Existe (\begin{DoxyParamCaption}\item[{int}]{array[$\,$],  }\item[{int}]{tamanho,  }\item[{int}]{valor }\end{DoxyParamCaption})}
+
+GG 2024 Funcao secundaria para ser usada na soma ,verifica se um valor no array existe 
+
+Definition at line \textbf{ 469} of file \textbf{ functions.\+c}.
+
+
+
+\doxysubsection{Variable Documentation}
+\label{header_8h_a5858babed4e19cef91bd1dfe0ab98820} 
+\index{header.h@{header.h}!matrizTotal@{matrizTotal}}
+\index{matrizTotal@{matrizTotal}!header.h@{header.h}}
+\doxysubsubsection{matrizTotal}
+{\footnotesize\ttfamily int matriz\+Total}
+
+
+
+Definition at line \textbf{ 35} of file \textbf{ header.\+h}.
+

@@ -1,12 +1,12 @@
 \doxysection{main.\+c}
-\label{main_8c_source}\index{E:/C/ProjetoED\_2324/ProjetoED\_2324/main.c@{E:/C/ProjetoED\_2324/ProjetoED\_2324/main.c}}
+\label{main_8c_source}\index{ProjetoED\_2324/main.c@{ProjetoED\_2324/main.c}}
 \textbf{ Go to the documentation of this file.}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Header.h"{}}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ FILENAME\ "{}E:\(\backslash\)\(\backslash\)C\(\backslash\)\(\backslash\)ProjetoED\_2324\(\backslash\)\(\backslash\)matriz.txt"{}}}
+\DoxyCodeLine{00011\ }
 \DoxyCodeLine{00012\ }
 \DoxyCodeLine{00013\ \textcolor{keywordtype}{int}\ main()\ \{}
 \DoxyCodeLine{00014\ \ \ \ \ Matriz*\ inicioMatriz\ =\ NULL;}
@@ -15,22 +15,23 @@
 \DoxyCodeLine{00017\ }
 \DoxyCodeLine{00018\ \ \ \ \ inicioMatriz\ =\ carregarFicheiroMatriz(FILENAME);}
 \DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//printMatriz(inicioMatriz);}}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//alterarvalor(inicioMatriz,\ 1,\ 2,\ 30);}}
+\DoxyCodeLine{00020\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ alterarvalor(inicioMatriz,\ 1,\ 2,\ 500);}
 \DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//printMatriz(inicioMatriz);}}
 \DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//inicioMatriz\ =\ removerLinhaExistente(inicioMatriz,\ 5);}}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//como\ perdemos\ o\ valor\ do\ inicio\ da\ linha\ atribuimos\ o\ valor\ que\ se\ guarda\ na\ matriz\ outra\ vez\ a\ linha}}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (inicioMatriz\ !=\ NULL)\ \{}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ inicioLinha\ =\ inicioMatriz-\/>inicioLinha;}
-\DoxyCodeLine{00028\ \ \ \ \ \}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{/*inicioMatriz\ =\ removerColuna(inicioMatriz,\ 1);*/}}
-\DoxyCodeLine{00031\ \ \ \ \ printMatriz(inicioMatriz);}
-\DoxyCodeLine{00032\ \ \ \ \ gravarmatrix(inicioMatriz,FILENAME);}
-\DoxyCodeLine{00033\ \ \ \ \ soma\ =\ somamatrix(inicioMatriz);}
-\DoxyCodeLine{00034\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Soma:\ \%d"{}},\ soma);}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{00036\ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//inicioMatriz\ =\ removerLinhaExistente(inicioMatriz,\ 3);}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ \ removerColuna(inicioMatriz,\ 3);}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//como\ perdemos\ o\ valor\ do\ inicio\ da\ linha\ atribuimos\ o\ valor\ que\ se\ guarda\ na\ matriz\ outra\ vez\ a\ linha}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (inicioMatriz\ !=\ NULL)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ inicioLinha\ =\ inicioMatriz-\/>inicioLinha;}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{/*inicioMatriz\ =\ removerColuna(inicioMatriz,\ 1);*/}}
+\DoxyCodeLine{00032\ \ \ \ \ printMatriz(inicioMatriz);}
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ \ gravarmatrix(inicioMatriz,FILENAME);}}
+\DoxyCodeLine{00034\ \ \ \ \ soma\ =\ somamatrix(inicioMatriz);}
+\DoxyCodeLine{00035\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Soma:\ \%d"{}},\ soma);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00037\ \}}
 
 \end{DoxyCode}

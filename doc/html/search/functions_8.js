@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['somamatrix_0',['somamatrix',['../_header_8h.html#aa9525e239572dcf3797c94ace2141e95',1,'somamatrix(Matriz *iniciomatriz):&#160;Source.c'],['../_source_8c.html#aa9525e239572dcf3797c94ace2141e95',1,'somamatrix(Matriz *iniciomatriz):&#160;Source.c']]]
+  ['valorexiste_0',['valorExiste',['../functions_8c.html#ac3b15e873afb39ef69029a9bc8179209',1,'valorExiste(int array[], int tamanho, int valor):&#160;functions.c'],['../header_8h.html#ac3b15e873afb39ef69029a9bc8179209',1,'valorExiste(int array[], int tamanho, int valor):&#160;functions.c']]]
 ];

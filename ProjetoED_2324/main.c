@@ -5,10 +5,11 @@
  * @author telesgomes96@gmail.com
  *
  */
+//#include "C:\\Users\\GG\\Desktop\\temp\\header.h"
 #include "Header.h"
 #include <stdio.h>
 #include <stdbool.h>
-
+//#pragma comment(lib,"C:\\Users\\GG\\Desktop\\temp\\LibProjectED.lib")
 
 int main() {
 	Matriz* inicioMatriz = NULL;
@@ -18,7 +19,7 @@ int main() {
 	inicioMatriz = carregarFicheiroMatriz(FILENAME);
 	//printMatriz(inicioMatriz);
 	
-	alterarvalor(inicioMatriz, 1, 2, 500);
+	alterarvalor(inicioMatriz, 3, 4, 260);
 	//printMatriz(inicioMatriz);
 
 	//inicioMatriz = removerLinhaExistente(inicioMatriz, 3);
@@ -29,9 +30,10 @@ int main() {
 	}
 
 	/*inicioMatriz = removerColuna(inicioMatriz, 1);*/
-	printMatriz(inicioMatriz);
-//	gravarmatrix(inicioMatriz,FILENAME);
-	soma = somamatrix(inicioMatriz);
+	//printMatriz(inicioMatriz);
+	
+	soma = somamatriz(inicioMatriz);
 	printf("Soma: %d", soma);
+	gravarmatriz(inicioMatriz,FILENAMEALT);
 	return 0;
 }

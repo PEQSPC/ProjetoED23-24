@@ -1,0 +1,44 @@
+\doxysection{header.\+h}
+\label{header_8h_source}\index{ProjetoED\_2324/header.h@{ProjetoED\_2324/header.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ FILENAME\ "{}matriz.txt"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ FILENAMEALT\ "{}matriz\_alterada.txt"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }linha\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ valor;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{struct\ }linha*\ proximo;}
+\DoxyCodeLine{00022\ \}Linha;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }matriz}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ Linha*\ inicioLinha;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{struct\ }matriz*\ proximo;}
+\DoxyCodeLine{00032\ \}Matriz;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{int}\ matrizTotal;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ Matriz*\ carregarFicheiroMatriz(\textcolor{keywordtype}{char}*\ nomeFicheiro);}
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{bool}\ printLinha(Linha*\ linha);}
+\DoxyCodeLine{00055\ Linha*\ inserirDadosInicioLinha(Linha*\ inicio,\ \textcolor{keywordtype}{int}\ valorInserir);}
+\DoxyCodeLine{00061\ Matriz*\ inserirNovaLinha(Matriz*\ inicio,\ Linha*\ LinhaInserir);}
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{bool}\ alterarvalor(Matriz*\ inicio,\ \textcolor{keywordtype}{int}\ linha,\ \textcolor{keywordtype}{int}\ coluna,\ \textcolor{keywordtype}{int}\ novoDado);}
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{bool}\ printMatriz(Matriz*\ matriz);}
+\DoxyCodeLine{00079\ Matriz*\ removerLinhaExistente(Matriz*\ inicio,\ \textcolor{keywordtype}{int}\ linhaParaRemover);}
+\DoxyCodeLine{00085\ Linha*\ removerColunaExistente(Linha*\ inicio,\ \textcolor{keywordtype}{int}\ colunaParaRemover);}
+\DoxyCodeLine{00091\ Matriz*\ removerColuna(Matriz*\ inicio,\ \textcolor{keywordtype}{int}\ colunaParaRemover);}
+\DoxyCodeLine{00097\ Matriz*\ gravarmatrix(Matriz*\ iniciomatriz,\ \textcolor{keywordtype}{char}*\ filename);}
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{int}\ somamatrix(Matriz*\ iniciomatriz);}
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{int}\ removerElemento(\textcolor{keywordtype}{int}\ array[],\ \textcolor{keywordtype}{int}\ size,\ \textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00115\ \textcolor{keywordtype}{bool}\ valorExiste(\textcolor{keywordtype}{int}\ array[],\ \textcolor{keywordtype}{int}\ tamanho,\ \textcolor{keywordtype}{int}\ valor);}
+\DoxyCodeLine{00121\ \textcolor{keywordtype}{int}*\ criarArray(\textcolor{keywordtype}{int}\ tamanho);}
+
+\end{DoxyCode}

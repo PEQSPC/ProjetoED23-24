@@ -19,6 +19,9 @@
   * \return
   */
 Linha* inserirDadosInicioLinha(Linha* inicio, int valorInserir) {
+    if (valorInserir < 1) {
+        return inicio;
+    }
     //Alocao de Memoria
     Linha* nova;
     nova = malloc(sizeof(Linha));
@@ -40,6 +43,9 @@ Linha* inserirDadosInicioLinha(Linha* inicio, int valorInserir) {
  * \return
  */
 Matriz* inserirNovaLinha(Matriz* inicio, Linha* linhaInserir) {
+    if (linhaInserir == NULL) {
+        return inicio;
+    }
     Matriz* nova;
     nova = malloc(sizeof(Matriz));
 
@@ -99,7 +105,7 @@ Matriz* removerLinhaExistente(Matriz* inicio, int linhaParaRemover) {
         auxMatriz = auxMatriz->proximo;
     }
 
-    printf("Linha invalida");
+  //  printf("Linha invalida");
     return inicio;
 }
 
@@ -142,7 +148,7 @@ Linha* removerColunaExistente(Linha* inicio, int colunaParaRemover) {
     // Verifica se a coluna a ser removida  valida
     if (colunaParaRemover < 1) {
         // printf("Coluna invalida");
-        return inicio; // Retorna a lista original se a linha for inv�lida.
+        return inicio; 
     }
 
     Linha* auxColuna = inicio;
@@ -179,7 +185,7 @@ Linha* removerColunaExistente(Linha* inicio, int colunaParaRemover) {
         auxColuna = auxColuna->proximo;
     }
 
-    // Se chegou aqui, a linha n�o foi encontrada
+    //a linha nao foi encontrada
     printf("Coluna invalida");
     return inicio; // Retorna a lista original se a linha nao for encontrada.
 }
@@ -343,13 +349,15 @@ Linha* inserirDadosFimLinha(Linha* inicio, int valor) {
  * \param iniciomatriz
  * \return da return da soma total da matriz sem repetir coluna e linha
  */
-int somamatrix(Matriz* iniciomatriz) {
+int somamatriz(Matriz* iniciomatriz) {
     //int* array;
     // Chama a função para criar o array
-    int coluna[] = criarArray(matrizTotal);
+    //int tamanho1 = matrizTotal;
+   // int* coluna = criarArray(tamanho1);
+
 
     //ter um array com os valores da row e coluna que se podem usar
-    //int coluna[] = { 1, 2, 3, 4, 5 };
+    int coluna[] = { 1, 2, 3, 4, 5 };
     int tamanho = sizeof(coluna) / sizeof(coluna[0]);
 
 
@@ -431,6 +439,7 @@ int somamatrix(Matriz* iniciomatriz) {
         if (size == 1) {
             index = 0;
         }
+        //atualiza o array para eliminar a coluna do valor maior
         for (int i = index; i < size; ++i) {
             coluna[i] = coluna[i + 1];
         }

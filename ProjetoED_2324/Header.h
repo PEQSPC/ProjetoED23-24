@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 /**
  * @file main.h
  * @author Teles Gomes
@@ -10,8 +10,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#define FILENAME "matriz.txt"
-#define FILENAMEALT "matriz_alterada.txt"
+#define FILENAME "E:\\C\\ProjetoED_2324\\matriz.txt"
+#define FILENAMEALT "E:\\C\\ProjetoED_2324\\matrizalt.txt"
 
  /// <summary>
  /// struct para  guardar os valores das celulas  e apontar para o proximo valor
@@ -34,7 +34,6 @@ typedef struct matriz
 
 int matrizTotal;
 
-
 /**
  * GG
  * 2024
@@ -56,7 +55,13 @@ Linha* inserirDadosInicioLinha(Linha* inicio, int valorInserir);
 /**
  * GG
  * 2024
- * Insere a linha na matriz 
+ * Insere Dados no fim da linha
+ */
+Linha* inserirDadosFimLinha(Linha* inicio, int valor);
+/**
+ * GG
+ * 2024
+ * Insere a linha na matriz
  */
 Matriz* inserirNovaLinha(Matriz* inicio, Linha* LinhaInserir);
 /**
@@ -98,7 +103,7 @@ Matriz* gravarmatrix(Matriz* iniciomatriz, char* filename);
 /**
  * GG
  * 2024
- * Soma os valores mais altos da matriz sem repetir colunas nem linhas 
+ * Soma os valores mais altos da matriz sem repetir colunas nem linhas
  */
 int somamatrix(Matriz* iniciomatriz);
 /**

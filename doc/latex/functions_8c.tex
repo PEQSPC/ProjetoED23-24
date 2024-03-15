@@ -1,0 +1,285 @@
+\doxysection{Projeto\+ED\+\_\+2324/functions.c File Reference}
+\label{functions_8c}\index{ProjetoED\_2324/functions.c@{ProjetoED\_2324/functions.c}}
+{\ttfamily \#include "{}Header.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Linha} $\ast$ \textbf{ inserir\+Dados\+Inicio\+Linha} (\textbf{ Linha} $\ast$inicio, int valor\+Inserir)
+\item 
+\textbf{ Matriz} $\ast$ \textbf{ inserir\+Nova\+Linha} (\textbf{ Matriz} $\ast$inicio, \textbf{ Linha} $\ast$linha\+Inserir)
+\item 
+\textbf{ Matriz} $\ast$ \textbf{ remover\+Linha\+Existente} (\textbf{ Matriz} $\ast$inicio, int linha\+Para\+Remover)
+\item 
+\textbf{ Matriz} $\ast$ \textbf{ remover\+Coluna} (\textbf{ Matriz} $\ast$inicio, int coluna\+Para\+Remover)
+\item 
+\textbf{ Linha} $\ast$ \textbf{ remover\+Coluna\+Existente} (\textbf{ Linha} $\ast$inicio, int coluna\+Para\+Remover)
+\item 
+bool \textbf{ print\+Linha} (\textbf{ Linha} $\ast$\textbf{ linha})
+\item 
+bool \textbf{ print\+Matriz} (\textbf{ Matriz} $\ast$\textbf{ matriz})
+\item 
+bool \textbf{ alterarvalor} (\textbf{ Matriz} $\ast$inicio, int \textbf{ linha}, int coluna, int novo\+Dado)
+\item 
+\textbf{ Linha} $\ast$ \textbf{ inserir\+Dados\+Fim\+Linha} (\textbf{ Linha} $\ast$inicio, int valor)
+\item 
+int \textbf{ somamatrix} (\textbf{ Matriz} $\ast$iniciomatriz)
+\item 
+int \textbf{ remover\+Elemento} (int array[$\,$], int size, int index)
+\item 
+bool \textbf{ valor\+Existe} (int array[$\,$], int tamanho, int valor)
+\item 
+int $\ast$ \textbf{ criar\+Array} (int tamanho)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\label{functions_8c_ac4c67843d3393eabbaacdcbc6107e12f} 
+\index{functions.c@{functions.c}!alterarvalor@{alterarvalor}}
+\index{alterarvalor@{alterarvalor}!functions.c@{functions.c}}
+\doxysubsubsection{alterarvalor()}
+{\footnotesize\ttfamily bool alterarvalor (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{inicio,  }\item[{int}]{linha,  }\item[{int}]{coluna,  }\item[{int}]{novo\+Dado }\end{DoxyParamCaption})}
+
+Funcao para alterar o valor de um valor em uma matriz..
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em linha} & \\
+\hline
+{\em coluna} & \\
+\hline
+{\em novo\+Dado} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 251} of file \textbf{ functions.\+c}.
+
+\label{functions_8c_a4dea0c43c466428b8bda185f86a504e2} 
+\index{functions.c@{functions.c}!criarArray@{criarArray}}
+\index{criarArray@{criarArray}!functions.c@{functions.c}}
+\doxysubsubsection{criarArray()}
+{\footnotesize\ttfamily int $\ast$ criar\+Array (\begin{DoxyParamCaption}\item[{int}]{tamanho }\end{DoxyParamCaption})}
+
+GG 2024 Funcao secundaria para ser usada na soma ,cria um array de 0 a int tamanho de valor de entrada 
+
+Definition at line \textbf{ 478} of file \textbf{ functions.\+c}.
+
+\label{functions_8c_a2c90e2f5676c00e1fe7267d8fb049679} 
+\index{functions.c@{functions.c}!inserirDadosFimLinha@{inserirDadosFimLinha}}
+\index{inserirDadosFimLinha@{inserirDadosFimLinha}!functions.c@{functions.c}}
+\doxysubsubsection{inserirDadosFimLinha()}
+{\footnotesize\ttfamily \textbf{ Linha} $\ast$ inserir\+Dados\+Fim\+Linha (\begin{DoxyParamCaption}\item[{\textbf{ Linha} $\ast$}]{inicio,  }\item[{int}]{valor }\end{DoxyParamCaption})}
+
+Inserir dados no fim da lista.\+Export feito de github luferipca
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em valor\+Inserir} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 317} of file \textbf{ functions.\+c}.
+
+\label{functions_8c_ad7448815e74265937ce44a524831000e} 
+\index{functions.c@{functions.c}!inserirDadosInicioLinha@{inserirDadosInicioLinha}}
+\index{inserirDadosInicioLinha@{inserirDadosInicioLinha}!functions.c@{functions.c}}
+\doxysubsubsection{inserirDadosInicioLinha()}
+{\footnotesize\ttfamily \textbf{ Linha} $\ast$ inserir\+Dados\+Inicio\+Linha (\begin{DoxyParamCaption}\item[{\textbf{ Linha} $\ast$}]{inicio,  }\item[{int}]{valor\+Inserir }\end{DoxyParamCaption})}
+
+Funcao para inserir um novo inicio de uma lista ligada da Linha.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em valor\+Inserir} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 21} of file \textbf{ functions.\+c}.
+
+\label{functions_8c_adef5aa5df5421ad33cb12cf733b9d9bd} 
+\index{functions.c@{functions.c}!inserirNovaLinha@{inserirNovaLinha}}
+\index{inserirNovaLinha@{inserirNovaLinha}!functions.c@{functions.c}}
+\doxysubsubsection{inserirNovaLinha()}
+{\footnotesize\ttfamily \textbf{ Matriz} $\ast$ inserir\+Nova\+Linha (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{inicio,  }\item[{\textbf{ Linha} $\ast$}]{linha\+Inserir }\end{DoxyParamCaption})}
+
+Funcao para adcicionar uma lista a matriz
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em linha\+Inserir} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 42} of file \textbf{ functions.\+c}.
+
+\label{functions_8c_a20c7c67ce43b16712e49bb5c683c7391} 
+\index{functions.c@{functions.c}!printLinha@{printLinha}}
+\index{printLinha@{printLinha}!functions.c@{functions.c}}
+\doxysubsubsection{printLinha()}
+{\footnotesize\ttfamily bool print\+Linha (\begin{DoxyParamCaption}\item[{\textbf{ Linha} $\ast$}]{linha }\end{DoxyParamCaption})}
+
+Funcao para imprimir os valores de uma linha de uma matriz..
+
+
+\begin{DoxyParams}{Parameters}
+{\em linha} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 193} of file \textbf{ functions.\+c}.
+
+\label{functions_8c_a575e07dc0fefeaab8498c0d9b4b8ef44} 
+\index{functions.c@{functions.c}!printMatriz@{printMatriz}}
+\index{printMatriz@{printMatriz}!functions.c@{functions.c}}
+\doxysubsubsection{printMatriz()}
+{\footnotesize\ttfamily bool print\+Matriz (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{matriz }\end{DoxyParamCaption})}
+
+Funcao para imprimir os valores de uma linha de uma matriz..
+
+
+\begin{DoxyParams}{Parameters}
+{\em matriz} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 225} of file \textbf{ functions.\+c}.
+
+\label{functions_8c_a399c90787ea0c1484d5504ed62067c0e} 
+\index{functions.c@{functions.c}!removerColuna@{removerColuna}}
+\index{removerColuna@{removerColuna}!functions.c@{functions.c}}
+\doxysubsubsection{removerColuna()}
+{\footnotesize\ttfamily \textbf{ Matriz} $\ast$ remover\+Coluna (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{inicio,  }\item[{int}]{coluna\+Para\+Remover }\end{DoxyParamCaption})}
+
+Funcao para remover uma coluna de uma lista da Matriz...
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em coluna\+Para\+Remover} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 113} of file \textbf{ functions.\+c}.
+
+\label{functions_8c_af361aa31f0afbb29143bc58022ec594a} 
+\index{functions.c@{functions.c}!removerColunaExistente@{removerColunaExistente}}
+\index{removerColunaExistente@{removerColunaExistente}!functions.c@{functions.c}}
+\doxysubsubsection{removerColunaExistente()}
+{\footnotesize\ttfamily \textbf{ Linha} $\ast$ remover\+Coluna\+Existente (\begin{DoxyParamCaption}\item[{\textbf{ Linha} $\ast$}]{inicio,  }\item[{int}]{coluna\+Para\+Remover }\end{DoxyParamCaption})}
+
+Fuction to assist remover\+Coluna.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em coluna\+Para\+Remover} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 140} of file \textbf{ functions.\+c}.
+
+\label{functions_8c_add5cc53969d5aab51c064502f7d853c9} 
+\index{functions.c@{functions.c}!removerElemento@{removerElemento}}
+\index{removerElemento@{removerElemento}!functions.c@{functions.c}}
+\doxysubsubsection{removerElemento()}
+{\footnotesize\ttfamily int remover\+Elemento (\begin{DoxyParamCaption}\item[{int}]{array[$\,$],  }\item[{int}]{size,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+GG 2024 Funcao secundaria para ser usada na soma matrix,remove um elemento de um array 
+
+Definition at line \textbf{ 456} of file \textbf{ functions.\+c}.
+
+\label{functions_8c_a7658c59358140ef08a11f9c78d310ae3} 
+\index{functions.c@{functions.c}!removerLinhaExistente@{removerLinhaExistente}}
+\index{removerLinhaExistente@{removerLinhaExistente}!functions.c@{functions.c}}
+\doxysubsubsection{removerLinhaExistente()}
+{\footnotesize\ttfamily \textbf{ Matriz} $\ast$ remover\+Linha\+Existente (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{inicio,  }\item[{int}]{linha\+Para\+Remover }\end{DoxyParamCaption})}
+
+Funcao para remover uma linha de uma lista ligada de Matriz..
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em linha\+Para\+Remover} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+da matriz sem a coluna 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 63} of file \textbf{ functions.\+c}.
+
+\label{functions_8c_aa9525e239572dcf3797c94ace2141e95} 
+\index{functions.c@{functions.c}!somamatrix@{somamatrix}}
+\index{somamatrix@{somamatrix}!functions.c@{functions.c}}
+\doxysubsubsection{somamatrix()}
+{\footnotesize\ttfamily int somamatrix (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{iniciomatriz }\end{DoxyParamCaption})}
+
+Funcao para fazer a soma total da matriz sem repetir coluna e linha,testado com array de 5x5 .
+
+
+\begin{DoxyParams}{Parameters}
+{\em iniciomatriz} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+da return da soma total da matriz sem repetir coluna e linha 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 346} of file \textbf{ functions.\+c}.
+
+\label{functions_8c_ac3b15e873afb39ef69029a9bc8179209} 
+\index{functions.c@{functions.c}!valorExiste@{valorExiste}}
+\index{valorExiste@{valorExiste}!functions.c@{functions.c}}
+\doxysubsubsection{valorExiste()}
+{\footnotesize\ttfamily bool valor\+Existe (\begin{DoxyParamCaption}\item[{int}]{array[$\,$],  }\item[{int}]{tamanho,  }\item[{int}]{valor }\end{DoxyParamCaption})}
+
+GG 2024 Funcao secundaria para ser usada na soma ,verifica se um valor no array existe 
+
+Definition at line \textbf{ 469} of file \textbf{ functions.\+c}.
+

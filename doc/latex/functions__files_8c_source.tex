@@ -1,0 +1,115 @@
+\doxysection{functions\+\_\+files.\+c}
+\label{functions__files_8c_source}\index{ProjetoED\_2324/functions\_files.c@{ProjetoED\_2324/functions\_files.c}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Header.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00021\ Matriz*\ gravarmatrix(Matriz*\ iniciomatriz,\ \textcolor{keywordtype}{char}*\ filename)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (strlen(filename)\ ==\ 0)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Nome\ do\ arquivo\ invalido.\(\backslash\)n"{}});}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ FILE*\ arquivo\ =\ fopen(filename,\ \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (arquivo\ ==\ NULL)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erro\ ao\ abrir\ o\ arquivo.\(\backslash\)n"{}});}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ Matriz*\ matriz\_atual\ =\ iniciomatriz;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{while}\ (matriz\_atual\ !=\ NULL)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ Linha*\ linha\_atual\ =\ matriz\_atual-\/>inicioLinha;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (linha\_atual\ !=\ NULL)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (linha\_atual-\/>proximo\ ==\ NULL)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(arquivo,\ \textcolor{stringliteral}{"{}\%d"{}},\ linha\_atual-\/>valor);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(arquivo,\ \textcolor{stringliteral}{"{}\%d;"{}},\ linha\_atual-\/>valor);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ linha\_atual\ =\ linha\_atual-\/>proximo;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ fprintf(arquivo,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ matriz\_atual\ =\ matriz\_atual-\/>proximo;}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ fclose(arquivo);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Matriz\ gravada\ com\ sucesso\ no\ arquivo:\ \%s\(\backslash\)n"{}},\ filename);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{return}\ iniciomatriz;}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ Matriz*\ carregarFicheiroMatriz(\textcolor{keywordtype}{char}*\ nomeFicheiro)}
+\DoxyCodeLine{00067\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ ponteiro\ para\ o\ inicio\ da\ lista}}
+\DoxyCodeLine{00069\ \ \ \ \ Linha*\ inicioLinha\ =\ NULL;}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//guarda\ a\ primeira\ lista}}
+\DoxyCodeLine{00071\ \ \ \ \ Matriz*\ inicioMatriz\ =\ NULL;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//guarda\ sempre\ a\ matriz\ atual}}
+\DoxyCodeLine{00073\ \ \ \ \ Matriz*\ matriz\_atual\ =\ NULL;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ Contador\ para\ o\ numero\ total\ de\ elementos\ na\ matriz.}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{int}\ temp;}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{char}\ icon;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ FILE*\ file\ =\ fopen(nomeFicheiro,\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\ ==\ NULL)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Error\ opening\ file"{}});}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ Le\ o\ arquivo\ ate\ chegar\ ao\ final.}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{while}\ (fscanf\_s(file,\ \textcolor{stringliteral}{"{}\%d\%c"{}},\ \&temp,\ \&icon)\ !=\ EOF)}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Insere\ o\ valor\ lido\ no\ inicio\ da\ linha.}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ inicioLinha\ =\ inserirDadosFimLinha(inicioLinha,\ temp);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%d\(\backslash\)t"{}},\ temp);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ o\ separador\ indica\ o\ final\ da\ linha.}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (icon\ ==\ \textcolor{charliteral}{'\(\backslash\)n'})\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Insere\ a\ linha\ na\ matriz.}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inicioMatriz\ ==\ NULL)\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ for\ a\ primeira\ linha,\ cria\ a\ primeira\ matriz.}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inicioMatriz\ =\ (Matriz*)malloc(\textcolor{keyword}{sizeof}(Matriz));}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inicioMatriz-\/>inicioLinha\ =\ inicioLinha;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inicioMatriz-\/>proximo\ =\ NULL;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matriz\_atual\ =\ inicioMatriz;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Senao,\ insere\ a\ linha\ no\ final\ da\ matriz\ existente.}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matriz\_atual-\/>proximo\ =\ (Matriz*)malloc(\textcolor{keyword}{sizeof}(Matriz));}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matriz\_atual\ =\ matriz\_atual-\/>proximo;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matriz\_atual-\/>inicioLinha\ =\ inicioLinha;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matriz\_atual-\/>proximo\ =\ NULL;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reinicia\ o\ ponteiro\ para\ o\ inicio\ da\ linha.}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ inicioLinha\ =\ NULL;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ matrizTotal++;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Incrementa\ o\ contador\ de\ elementos.}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00122\ \ \ \ \ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//\ Fecha\ o\ arquivo\ apos\ a\ leitura.}}
+\DoxyCodeLine{00125\ \ \ \ \ fclose(file);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{comment}{//\ Retorna\ o\ ponteiro\ para\ o\ inicio\ da\ matriz.}}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordflow}{return}\ inicioMatriz;}
+\DoxyCodeLine{00129\ \}}
+
+\end{DoxyCode}

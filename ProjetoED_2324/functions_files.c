@@ -7,6 +7,7 @@
  * \contact telesgomes96@gmail.com
  *********************************************************************/
 #include "Header.h"
+//#include "functions.c"
 #include <stdio.h>
 #include <stdint.h>
 
@@ -18,7 +19,7 @@
   * \param filename matriz.txt
   * \return inicio da matriz
   */
-Matriz* gravarmatrix(Matriz* iniciomatriz, char* filename) {
+Matriz* gravarmatriz(Matriz* iniciomatriz, char* filename) {
     if (strlen(filename) == 0) {
         printf("Nome do arquivo invalido.\n");
         return NULL;
@@ -53,7 +54,7 @@ Matriz* gravarmatrix(Matriz* iniciomatriz, char* filename) {
 
     fclose(arquivo);
 
-    printf("Matriz gravada com sucesso no arquivo: %s\n", filename);
+    //printf("Matriz salva no arquivo: %s\n", filename);
     return iniciomatriz;
 }
 
@@ -72,8 +73,7 @@ Matriz* carregarFicheiroMatriz(char* nomeFicheiro)
     //guarda sempre a matriz atual
     Matriz* matriz_atual = NULL;
 
-    // Contador para o numero total de elementos na matriz.
-    int count = 0;
+    
     int temp;
     char icon;
 
@@ -91,7 +91,7 @@ Matriz* carregarFicheiroMatriz(char* nomeFicheiro)
     {
         // Insere o valor lido no inicio da linha.
         inicioLinha = inserirDadosFimLinha(inicioLinha, temp);
-        printf("%d\t", temp);
+        //printf("%d\t", temp);
 
         // Verifica se o separador indica o final da linha.
         if (icon == '\n') {
@@ -117,8 +117,7 @@ Matriz* carregarFicheiroMatriz(char* nomeFicheiro)
             printf("\n");
         }
 
-        // Incrementa o contador de elementos.
-        count++;
+        
     }
 
     // Fecha o arquivo apos a leitura.

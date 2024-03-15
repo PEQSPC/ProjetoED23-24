@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ProjectED2324: E:/C/ProjetoED_2324/ProjetoED_2324/main.c Source File</title>
+<title>ProjectED2324: ProjetoED_2324/main.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -78,7 +78,7 @@ $(function() { codefold.init(0); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_885cc87fac2d91e269af0a5a959fa5f6.html">E:</a></li><li class="navelem"><a class="el" href="dir_6cec5902c8929430f0cb1b366caa934c.html">C</a></li><li class="navelem"><a class="el" href="dir_15dc1290a2aa910eab2abeb32dcc7fa8.html">ProjetoED_2324</a></li><li class="navelem"><a class="el" href="dir_4a08b12bcff7a520456c11e6b2a115bb.html">ProjetoED_2324</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_3e660e456d3684bc81594d5679d6f2e5.html">ProjetoED_2324</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -86,10 +86,10 @@ $(function() { codefold.init(0); });
 </div><!--header-->
 <div class="contents">
 <a href="main_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_header_8h.html">Header.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="header_8h.html">Header.h</a>&quot;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="main_8c.html#a8de29f7c8bbf1a81cc6e71ac602032d3">   11</a></span><span class="preprocessor">#define FILENAME &quot;E:\\C\\ProjetoED_2324\\matriz.txt&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   13</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
@@ -97,36 +97,37 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_struct" href="structlinha.html">Linha</a>* inicioLinha = NULL;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">int</span> soma = 0;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    inicioMatriz = <a class="code hl_function" href="_header_8h.html#ae689da47348fd20b7c125b480e99e62a">carregarFicheiroMatriz</a>(<a class="code hl_define" href="main_8c.html#a8de29f7c8bbf1a81cc6e71ac602032d3">FILENAME</a>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    inicioMatriz = <a class="code hl_function" href="functions__files_8c.html#ae689da47348fd20b7c125b480e99e62a">carregarFicheiroMatriz</a>(<a class="code hl_define" href="header_8h.html#a8de29f7c8bbf1a81cc6e71ac602032d3">FILENAME</a>);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">//printMatriz(inicioMatriz);</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">//alterarvalor(inicioMatriz, 1, 2, 30);</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="functions_8c.html#ac4c67843d3393eabbaacdcbc6107e12f">alterarvalor</a>(inicioMatriz, 1, 2, 500);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">//printMatriz(inicioMatriz);</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">//inicioMatriz = removerLinhaExistente(inicioMatriz, 5);</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">//como perdemos o valor do inicio da linha atribuimos o valor que se guarda na matriz outra vez a linha</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">if</span> (inicioMatriz != NULL) {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        inicioLinha = inicioMatriz-&gt;<a class="code hl_variable" href="structmatriz.html#aeb638277fff03a9c24e4972ac61afe51">inicioLinha</a>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">/*inicioMatriz = removerColuna(inicioMatriz, 1);*/</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="_header_8h.html#a575e07dc0fefeaab8498c0d9b4b8ef44">printMatriz</a>(inicioMatriz);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="_header_8h.html#ac41a19955aab10d9af5fc415bd653b65">gravarmatrix</a>(inicioMatriz,<a class="code hl_define" href="main_8c.html#a8de29f7c8bbf1a81cc6e71ac602032d3">FILENAME</a>);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    soma = <a class="code hl_function" href="_header_8h.html#aa9525e239572dcf3797c94ace2141e95">somamatrix</a>(inicioMatriz);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    printf(<span class="stringliteral">&quot;Soma: %d&quot;</span>, soma);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">//inicioMatriz = removerLinhaExistente(inicioMatriz, 3);</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//  removerColuna(inicioMatriz, 3);</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">//como perdemos o valor do inicio da linha atribuimos o valor que se guarda na matriz outra vez a linha</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">if</span> (inicioMatriz != NULL) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        inicioLinha = inicioMatriz-&gt;<a class="code hl_variable" href="structmatriz.html#aeb638277fff03a9c24e4972ac61afe51">inicioLinha</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">/*inicioMatriz = removerColuna(inicioMatriz, 1);*/</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="functions_8c.html#a575e07dc0fefeaab8498c0d9b4b8ef44">printMatriz</a>(inicioMatriz);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">//  gravarmatrix(inicioMatriz,FILENAME);</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    soma = <a class="code hl_function" href="functions_8c.html#aa9525e239572dcf3797c94ace2141e95">somamatrix</a>(inicioMatriz);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    printf(<span class="stringliteral">&quot;Soma: %d&quot;</span>, soma);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
 </div>
-<div class="ttc" id="a_header_8h_html"><div class="ttname"><a href="_header_8h.html">Header.h</a></div></div>
-<div class="ttc" id="a_header_8h_html_a575e07dc0fefeaab8498c0d9b4b8ef44"><div class="ttname"><a href="_header_8h.html#a575e07dc0fefeaab8498c0d9b4b8ef44">printMatriz</a></div><div class="ttdeci">bool printMatriz(Matriz *matriz)</div><div class="ttdef"><b>Definition</b> <a href="_source_8c_source.html#l00218">Source.c:218</a></div></div>
-<div class="ttc" id="a_header_8h_html_aa9525e239572dcf3797c94ace2141e95"><div class="ttname"><a href="_header_8h.html#aa9525e239572dcf3797c94ace2141e95">somamatrix</a></div><div class="ttdeci">int somamatrix(Matriz *iniciomatriz)</div><div class="ttdef"><b>Definition</b> <a href="_source_8c_source.html#l00451">Source.c:451</a></div></div>
-<div class="ttc" id="a_header_8h_html_ac41a19955aab10d9af5fc415bd653b65"><div class="ttname"><a href="_header_8h.html#ac41a19955aab10d9af5fc415bd653b65">gravarmatrix</a></div><div class="ttdeci">Matriz * gravarmatrix(Matriz *iniciomatriz, char *filename)</div><div class="ttdef"><b>Definition</b> <a href="_source_8c_source.html#l00407">Source.c:407</a></div></div>
-<div class="ttc" id="a_header_8h_html_ae689da47348fd20b7c125b480e99e62a"><div class="ttname"><a href="_header_8h.html#ae689da47348fd20b7c125b480e99e62a">carregarFicheiroMatriz</a></div><div class="ttdeci">Matriz * carregarFicheiroMatriz(char *nomeFicheiro)</div><div class="ttdoc">Carrega o ficheiro e guardas informa�oes nas structs.</div><div class="ttdef"><b>Definition</b> <a href="_source_8c_source.html#l00334">Source.c:334</a></div></div>
-<div class="ttc" id="amain_8c_html_a8de29f7c8bbf1a81cc6e71ac602032d3"><div class="ttname"><a href="main_8c.html#a8de29f7c8bbf1a81cc6e71ac602032d3">FILENAME</a></div><div class="ttdeci">#define FILENAME</div><div class="ttdef"><b>Definition</b> <a href="#l00011">main.c:11</a></div></div>
+<div class="ttc" id="afunctions_8c_html_a575e07dc0fefeaab8498c0d9b4b8ef44"><div class="ttname"><a href="functions_8c.html#a575e07dc0fefeaab8498c0d9b4b8ef44">printMatriz</a></div><div class="ttdeci">bool printMatriz(Matriz *matriz)</div><div class="ttdef"><b>Definition</b> <a href="functions_8c_source.html#l00225">functions.c:225</a></div></div>
+<div class="ttc" id="afunctions_8c_html_aa9525e239572dcf3797c94ace2141e95"><div class="ttname"><a href="functions_8c.html#aa9525e239572dcf3797c94ace2141e95">somamatrix</a></div><div class="ttdeci">int somamatrix(Matriz *iniciomatriz)</div><div class="ttdef"><b>Definition</b> <a href="functions_8c_source.html#l00346">functions.c:346</a></div></div>
+<div class="ttc" id="afunctions_8c_html_ac4c67843d3393eabbaacdcbc6107e12f"><div class="ttname"><a href="functions_8c.html#ac4c67843d3393eabbaacdcbc6107e12f">alterarvalor</a></div><div class="ttdeci">bool alterarvalor(Matriz *inicio, int linha, int coluna, int novoDado)</div><div class="ttdef"><b>Definition</b> <a href="functions_8c_source.html#l00251">functions.c:251</a></div></div>
+<div class="ttc" id="afunctions__files_8c_html_ae689da47348fd20b7c125b480e99e62a"><div class="ttname"><a href="functions__files_8c.html#ae689da47348fd20b7c125b480e99e62a">carregarFicheiroMatriz</a></div><div class="ttdeci">Matriz * carregarFicheiroMatriz(char *nomeFicheiro)</div><div class="ttdef"><b>Definition</b> <a href="functions__files_8c_source.html#l00066">functions_files.c:66</a></div></div>
+<div class="ttc" id="aheader_8h_html"><div class="ttname"><a href="header_8h.html">header.h</a></div></div>
+<div class="ttc" id="aheader_8h_html_a8de29f7c8bbf1a81cc6e71ac602032d3"><div class="ttname"><a href="header_8h.html#a8de29f7c8bbf1a81cc6e71ac602032d3">FILENAME</a></div><div class="ttdeci">#define FILENAME</div><div class="ttdef"><b>Definition</b> <a href="header_8h_source.html#l00013">header.h:13</a></div></div>
 <div class="ttc" id="amain_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="#l00013">main.c:13</a></div></div>
-<div class="ttc" id="astructlinha_html"><div class="ttname"><a href="structlinha.html">linha</a></div><div class="ttdoc">struct para guardar os valores das celulas e apontar para o proximo valor</div><div class="ttdef"><b>Definition</b> <a href="_header_8h_source.html#l00018">Header.h:18</a></div></div>
-<div class="ttc" id="astructmatriz_html"><div class="ttname"><a href="structmatriz.html">matriz</a></div><div class="ttdoc">struct onde fica guardado os inicios das listas e a proxima lista</div><div class="ttdef"><b>Definition</b> <a href="_header_8h_source.html#l00027">Header.h:28</a></div></div>
-<div class="ttc" id="astructmatriz_html_aeb638277fff03a9c24e4972ac61afe51"><div class="ttname"><a href="structmatriz.html#aeb638277fff03a9c24e4972ac61afe51">matriz::inicioLinha</a></div><div class="ttdeci">Linha * inicioLinha</div><div class="ttdef"><b>Definition</b> <a href="_header_8h_source.html#l00029">Header.h:29</a></div></div>
+<div class="ttc" id="astructlinha_html"><div class="ttname"><a href="structlinha.html">linha</a></div><div class="ttdoc">struct para guardar os valores das celulas e apontar para o proximo valor</div><div class="ttdef"><b>Definition</b> <a href="header_8h_source.html#l00019">header.h:19</a></div></div>
+<div class="ttc" id="astructmatriz_html"><div class="ttname"><a href="structmatriz.html">matriz</a></div><div class="ttdoc">struct onde fica guardado os inicios das listas e a proxima lista</div><div class="ttdef"><b>Definition</b> <a href="header_8h_source.html#l00028">header.h:29</a></div></div>
+<div class="ttc" id="astructmatriz_html_aeb638277fff03a9c24e4972ac61afe51"><div class="ttname"><a href="structmatriz.html#aeb638277fff03a9c24e4972ac61afe51">matriz::inicioLinha</a></div><div class="ttdeci">Linha * inicioLinha</div><div class="ttdef"><b>Definition</b> <a href="header_8h_source.html#l00030">header.h:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
