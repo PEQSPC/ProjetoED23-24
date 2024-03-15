@@ -1,0 +1,514 @@
+\doxysection{Source.\+c}
+\label{_source_8c_source}\index{E:/C/ProjetoED\_2324/ProjetoED\_2324/Source.c@{E:/C/ProjetoED\_2324/ProjetoED\_2324/Source.c}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Header.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00022\ Linha*\ inserirDadosInicioLinha(Linha*\ inicio,\ \textcolor{keywordtype}{int}\ valorInserir)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//Alocao\ de\ Memoria}}
+\DoxyCodeLine{00024\ \ \ \ \ Linha*\ nova;}
+\DoxyCodeLine{00025\ \ \ \ \ nova\ =\ malloc(\textcolor{keyword}{sizeof}(Linha));}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ nova-\/>valor\ =\ valorInserir;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ nova-\/>proximo\ =\ inicio;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Retorna\ o\ ponteiro\ para\ a\ nova\ lista}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{return}\ nova;}
+\DoxyCodeLine{00034\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00043\ Matriz*\ inserirNovaLinha(Matriz*\ inicio,\ Linha*\ linhaInserir)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ Matriz*\ nova;}
+\DoxyCodeLine{00045\ \ \ \ \ nova\ =\ malloc(\textcolor{keyword}{sizeof}(Matriz));}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Define\ o\ inicio\ da\ linha\ da\ nova\ matriz\ como\ a\ linha\ a\ ser\ inserida.}}
+\DoxyCodeLine{00048\ \ \ \ \ nova-\/>inicioLinha\ =\ linhaInserir;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ A\ prxima\ lista\ apos\ o\ inicio\ da\ lista}}
+\DoxyCodeLine{00050\ \ \ \ \ nova-\/>proximo\ =\ inicio;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ Retorna\ o\ ponteiro\ para\ a\ nova\ matriz}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ nova;}
+\DoxyCodeLine{00054\ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00064\ Matriz*\ removerLinhaExistente(Matriz*\ inicio,\ \textcolor{keywordtype}{int}\ linhaParaRemover)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ a\ linha\ a\ ser\ removida\ e\ valida\ }}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{if}\ (linhaParaRemover\ <\ 1)}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}linha\ invalida"{}});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ inicio;\ }
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ Matriz*\ auxMatriz\ =\ inicio;}
+\DoxyCodeLine{00073\ \ \ \ \ Matriz*\ linhaAnterior\ =\ NULL;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ linhaAtual\ =\ 1;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ se\ a\ linha\ a\ ser\ removida\ for\ a\ primeira}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{if}\ (linhaParaRemover\ ==\ 1)\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ inicio\ =\ inicio-\/>proximo;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ inicio;\ \ \ \textcolor{comment}{//\ Retorna\ o\ novo\ inicio\ da\ lista}}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ Percorre\ a\ lista\ ligada}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{while}\ (auxMatriz\ !=\ NULL)}
+\DoxyCodeLine{00084\ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{comment}{//verificamos\ se\ a\ linha\ a\ remover\ e\ igual\ a\ lista\ ,se\ for\ vamos\ buscar\ a\ promixa\ lista\ e\ apontamos\ para\ a\ proxima}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (linhaAtual\ ==\ linhaParaRemover)}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ a\ lista\ \ atual,\ ajustando\ a\ lista\ anterior}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ linhaAnterior-\/>proximo\ =\ auxMatriz-\/>proximo;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ inicio;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ linhaAtual++;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ linhaAnterior\ =\ auxMatriz;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ auxMatriz\ =\ auxMatriz-\/>proximo;}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Linha\ invalida"{}});}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{return}\ inicio;\ }
+\DoxyCodeLine{00100\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00109\ Matriz*\ removerColuna(Matriz*\ inicio,\ \textcolor{keywordtype}{int}\ colunaParaRemover)\ \{}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ a\ coluna\ a\ ser\ removida\ e\ valida}}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{if}\ (colunaParaRemover\ <\ 1)\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Coluna\ invalida"{}});}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ inicio;\ \textcolor{comment}{//\ Retorna\ a\ matriz\ original\ se\ a\ coluna\ for\ invalida.}}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ Matriz*\ auxMatriz\ =\ inicio;\textcolor{comment}{//\ Ponteiro\ auxiliar\ para\ percorrer\ a\ lista\ de\ linhas}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{//\ Percorre\ a\ lista\ de\ linhas}}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{while}\ (auxMatriz\ !=\ NULL)\ \{}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Chama\ a\ funcao\ para\ remover\ a\ coluna\ da\ linha\ atual}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ auxMatriz-\/>inicioLinha\ =\ removerColunaExistente(auxMatriz-\/>inicioLinha,\ colunaParaRemover);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ auxMatriz\ =\ auxMatriz-\/>proximo;\textcolor{comment}{//\ Avanca\ para\ a\ proxima\ linha}}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{return}\ inicio;\ \textcolor{comment}{//\ Retorna\ a\ matriz\ original\ apos\ a\ remover\ a\ coluna}}
+\DoxyCodeLine{00128\ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00137\ Linha*\ removerColunaExistente(Linha*\ inicio,\ \textcolor{keywordtype}{int}\ colunaParaRemover)\ \{}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ a\ coluna\ a\ ser\ removida\ {\ucr}\ v{\ucr}lida}}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordflow}{if}\ (colunaParaRemover\ <\ 1)\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Coluna\ invalida"{}});}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ inicio;\ \textcolor{comment}{//\ Retorna\ a\ lista\ original\ se\ a\ linha\ for\ inv{\ucr}lida.}}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ Linha*\ auxColuna\ =\ inicio;\ \textcolor{comment}{//\ Ponteiro\ auxiliar\ para\ percorrer\ a\ lista\ de\ colunas}}
+\DoxyCodeLine{00146\ \ \ \ \ Linha*\ colunaAnterio\ =\ NULL;\ \textcolor{comment}{//\ Ponteiro\ para\ a\ coluna\ anterior}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{int}\ colunaAtual\ =\ 1;\textcolor{comment}{//\ Contador\ de\ colunas}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{comment}{//remo{\ucr}{\ucr}o\ da\ primeira\ coluna}}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{if}\ (colunaParaRemover\ ==\ 1)\ \{}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ inicio\ =\ inicio-\/>proximo;\ \textcolor{comment}{//\ Atualiza\ o\ in{\ucr}cio\ para\ apontar\ para\ a\ proxima\ coluna}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ inicio;\ \textcolor{comment}{//\ Retorna\ a\ lista\ atualizada}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{comment}{//\ Percorre\ a\ lista\ de\ colunas}}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordflow}{while}\ (auxColuna\ !=\ NULL)}
+\DoxyCodeLine{00160\ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ encontrarmos\ a\ coluna\ a\ ser\ removida}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (colunaAtual\ ==\ colunaParaRemover)}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ajusta\ o\ ponteiro\ da\ coluna\ anterior\ para\ apontar\ para\ a\ proxima\ coluna}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ colunaAnterio-\/>proximo\ =\ auxColuna-\/>proximo;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ inicio;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Atualiza\ os\ ponteiros\ e\ o\ contador\ para\ a\ pr{\ucr}xima\ itera{\ucr}{\ucr}o}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ colunaAtual++;}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ colunaAnterio\ =\ auxColuna;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ auxColuna\ =\ auxColuna-\/>proximo;}
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{comment}{//\ Se\ chegou\ aqui,\ a\ linha\ n{\ucr}o\ foi\ encontrada}}
+\DoxyCodeLine{00176\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Coluna\ invalida"{}});}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordflow}{return}\ inicio;\ \textcolor{comment}{//\ Retorna\ a\ lista\ original\ se\ a\ linha\ nao\ for\ encontrada.}}
+\DoxyCodeLine{00178\ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00186\ \textcolor{keywordtype}{bool}\ printLinha(Linha*\ linha)\ \{}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{comment}{//\ Inicializa\ um\ ponteiro\ auxiliar\ para\ percorrer\ a\ linha.}}
+\DoxyCodeLine{00189\ \ \ \ \ Linha*\ aux\ =\ linha;}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{comment}{//\ Percorre\ a\ linha\ ate\ o\ final,\ imprimindo\ os\ valores\ de\ cada\ lista.}}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordflow}{while}\ (aux\ !=\ NULL)\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aux-\/>proximo\ ==\ NULL)\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%d"{}},\ aux-\/>valor);}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%d;"{}},\ aux-\/>valor);}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{comment}{//avan{\ucr}a\ com\ o\ aux\ assumindo\ o\ valor\ de\ proximo}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ aux\ =\ aux-\/>proximo;}
+\DoxyCodeLine{00204\ \ \ \ \ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{comment}{//\ Ap{\ucr}s\ imprimir\ todos\ os\ valores\ da\ linha,\ imprime\ uma\ nova\ linha\ para\ separar\ das\ proximas\ impressoes.}}
+\DoxyCodeLine{00207\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00210\ \}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00218\ \textcolor{keywordtype}{bool}\ printMatriz(Matriz*\ matriz)\ \{}
+\DoxyCodeLine{00219\ \ \ \ \ Matriz*\ aux\ =\ matriz;}
+\DoxyCodeLine{00220\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Matriz:\(\backslash\)n"{}});}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordflow}{while}\ (aux\ !=\ NULL)\ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Linhas:\(\backslash\)n"{}});}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ printLinha(aux-\/>inicioLinha);}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ aux\ =\ aux-\/>proximo;}
+\DoxyCodeLine{00225\ \ \ \ \ \}}
+\DoxyCodeLine{00226\ \}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00240\ \textcolor{keywordtype}{bool}\ alterarvalor(Matriz*\ inicio,\ \textcolor{keywordtype}{int}\ linha,\ \textcolor{keywordtype}{int}\ coluna,\ \textcolor{keywordtype}{int}\ novoDado)\ \{}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ a\ linha\ e\ valida}}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordflow}{if}\ (linha\ <\ 1)}
+\DoxyCodeLine{00243\ \ \ \ \ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}linha\ invalida"{}});}
+\DoxyCodeLine{00245\ \ \ \ \ \}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ a\ coluna\ e\ valida}}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordflow}{if}\ (coluna\ <\ 1)}
+\DoxyCodeLine{00249\ \ \ \ \ \{}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}coluna\ invalida"{}});}
+\DoxyCodeLine{00251\ \ \ \ \ \}}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \ \ Matriz*\ auxMatriz\ =\ inicio;}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ Linha*\ auxLinha\ =\ NULL;}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{comment}{//\ Armazena\ as\ posicoes\ }}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordtype}{int}\ linha\_Atual\ =\ 1;}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordtype}{int}\ coluna\_Atual\ =\ 1;}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{comment}{//\ Percorre\ a\ lista\ de\ Matriz.}}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordflow}{while}\ (auxMatriz\ !=\ NULL)}
+\DoxyCodeLine{00264\ \ \ \ \ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ a\ linha\ atual\ for\ a\ linha\ desejada.}}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (linha\_Atual\ ==\ linha)}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Inicializa\ o\ ponteiro\ para\ percorrer\ a\ lista\ de\ Linha.}}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ auxLinha\ =\ auxMatriz-\/>inicioLinha;}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Percorre\ a\ lista\ de\ Linha.}}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (auxLinha\ !=\ NULL)}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ a\ coluna\ atual\ for\ a\ coluna\ desejada.}}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (coluna\_Atual\ ==\ coluna)}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Altera\ o\ valor\ do\ dado\ para\ o\ novo\ valor\ fornecido.}}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auxLinha-\/>valor\ =\ novoDado;}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ auxLinha;\ \textcolor{comment}{//\ Retorna\ apos\ a\ alteracao.}}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Atualiza\ a\ coluna\ atual\ e\ avanca\ para\ a\ proxima\ lista}}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ coluna\_Atual++;}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auxLinha\ =\ auxLinha-\/>proximo;}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}coluna\ invalida"{}});}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ conta\ as\ listas\ que\ foram\ percorridas}}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ linha\_Atual++;}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ auxMatriz\ =\ auxMatriz-\/>proximo;}
+\DoxyCodeLine{00292\ \ \ \ \ \}}
+\DoxyCodeLine{00293\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Linha\ invalida"{}});}
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \}}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00305\ Linha*\ inserirDadosFimLinha(Linha*\ inicio,\ \textcolor{keywordtype}{int}\ valor)\ \{}
+\DoxyCodeLine{00306\ \ \ \ \ Linha*\ novo\ =\ (Linha*)malloc(\textcolor{keyword}{sizeof}(Linha));}
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordflow}{if}\ (novo\ ==\ NULL)\ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{comment}{//\ Define\ o\ valor\ do\ novo\ no\ como\ o\ valor\ fornecido.}}
+\DoxyCodeLine{00310\ \ \ \ \ novo-\/>valor\ =\ valor;}
+\DoxyCodeLine{00311\ \ \ \ \ novo-\/>proximo\ =\ NULL;\ }
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{comment}{//Se\ a\ lista\ estiver\ vazia\ o\ novo\ valor\ vai\ ser\ o\ inicio}}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keywordflow}{if}\ (inicio\ ==\ NULL)\ \{}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ inicio\ =\ novo;}
+\DoxyCodeLine{00316\ \ \ \ \ \}}
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ Linha*\ aux\ =\ inicio;}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (aux-\/>proximo\ !=\ NULL)\ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ aux\ =\ aux-\/>proximo;}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ aux-\/>proximo\ =\ novo;}
+\DoxyCodeLine{00323\ \ \ \ \ \}}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordflow}{return}\ inicio;\ \textcolor{comment}{//\ Retorna\ o\ ponteiro\ para\ o\ inicio\ da\ lista.}}
+\DoxyCodeLine{00326\ \}}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00334\ Matriz*\ carregarFicheiroMatriz(\textcolor{keywordtype}{char}*\ nomeFicheiro)}
+\DoxyCodeLine{00335\ \{}
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{comment}{//\ ponteiro\ para\ o\ inicio\ da\ lista}}
+\DoxyCodeLine{00337\ \ \ \ \ Linha*\ inicioLinha\ =\ NULL;}
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{comment}{//guarda\ a\ primeira\ lista}}
+\DoxyCodeLine{00339\ \ \ \ \ Matriz*\ inicioMatriz\ =\ NULL;}
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{comment}{//guarda\ sempre\ a\ matriz\ atual}}
+\DoxyCodeLine{00341\ \ \ \ \ Matriz*\ matriz\_atual\ =\ NULL;}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ \textcolor{comment}{//\ Contador\ para\ o\ numero\ total\ de\ elementos\ na\ matriz.}}
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00345\ \ \ \ \ \textcolor{keywordtype}{int}\ temp;}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordtype}{char}\ icon;}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \ \ \ \ FILE*\ file\ =\ fopen(nomeFicheiro,\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\ ==\ NULL)\ \{}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Error\ opening\ file"{}});}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00353\ \ \ \ \ \}}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{comment}{//\ Le\ o\ arquivo\ ate\ chegar\ ao\ final.}}
+\DoxyCodeLine{00358\ \ \ \ \ \textcolor{keywordflow}{while}\ (fscanf\_s(file,\ \textcolor{stringliteral}{"{}\%d\%c"{}},\ \&temp,\ \&icon)\ !=\ EOF)}
+\DoxyCodeLine{00359\ \ \ \ \ \{}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Insere\ o\ valor\ lido\ no\ inicio\ da\ linha.}}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ inicioLinha\ =\ inserirDadosFimLinha(inicioLinha,\ temp);}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%d\(\backslash\)t"{}},\ temp);}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ o\ separador\ indica\ o\ final\ da\ linha.}}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (icon\ ==\ \textcolor{charliteral}{'\(\backslash\)n'})\ \{}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Insere\ a\ linha\ na\ matriz.}}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inicioMatriz\ ==\ NULL)\ \{}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ for\ a\ primeira\ linha,\ cria\ a\ primeira\ matriz.}}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inicioMatriz\ =\ (Matriz*)malloc(\textcolor{keyword}{sizeof}(Matriz));}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inicioMatriz-\/>inicioLinha\ =\ inicioLinha;}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inicioMatriz-\/>proximo\ =\ NULL;}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matriz\_atual\ =\ inicioMatriz;}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Senao,\ insere\ a\ linha\ no\ final\ da\ matriz\ existente.}}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matriz\_atual-\/>proximo\ =\ (Matriz*)malloc(\textcolor{keyword}{sizeof}(Matriz));}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matriz\_atual\ =\ matriz\_atual-\/>proximo;}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matriz\_atual-\/>inicioLinha\ =\ inicioLinha;}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matriz\_atual-\/>proximo\ =\ NULL;}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reinicia\ o\ ponteiro\ para\ o\ inicio\ da\ linha.}}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ inicioLinha\ =\ NULL;}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ matrizTotal++;}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Incrementa\ o\ contador\ de\ elementos.}}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00390\ \ \ \ \ \}}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{comment}{//\ Fecha\ o\ arquivo\ apos\ a\ leitura.}}
+\DoxyCodeLine{00393\ \ \ \ \ fclose(file);}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \ \ \ \ \textcolor{comment}{//\ Retorna\ o\ ponteiro\ para\ o\ inicio\ da\ matriz.}}
+\DoxyCodeLine{00396\ \ \ \ \ \textcolor{keywordflow}{return}\ inicioMatriz;}
+\DoxyCodeLine{00397\ \}}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00407\ Matriz*\ gravarmatrix(Matriz*\ iniciomatriz,\ \textcolor{keywordtype}{char}*\ filename)\ \{}
+\DoxyCodeLine{00408\ \ \ \ \ \textcolor{keywordflow}{if}\ (strlen(filename)\ ==\ 0)\ \{}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Nome\ do\ arquivo\ invalido.\(\backslash\)n"{}});}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00411\ \ \ \ \ \}}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ \ \ \ \ FILE*\ arquivo\ =\ fopen(filename,\ \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{00414\ \ \ \ \ \textcolor{keywordflow}{if}\ (arquivo\ ==\ NULL)\ \{}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erro\ ao\ abrir\ o\ arquivo.\(\backslash\)n"{}});}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00417\ \ \ \ \ \}}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ \ \ \ \ Matriz*\ matriz\_atual\ =\ iniciomatriz;}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00421\ \ \ \ \ \textcolor{keywordflow}{while}\ (matriz\_atual\ !=\ NULL)\ \{}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ Linha*\ linha\_atual\ =\ matriz\_atual-\/>inicioLinha;}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (linha\_atual\ !=\ NULL)\ \{}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (linha\_atual-\/>proximo\ ==\ NULL)\ \{}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(arquivo,\ \textcolor{stringliteral}{"{}\%d"{}},\ linha\_atual-\/>valor);}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(arquivo,\ \textcolor{stringliteral}{"{}\%d;"{}},\ linha\_atual-\/>valor);}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ linha\_atual\ =\ linha\_atual-\/>proximo;}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ fprintf(arquivo,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ matriz\_atual\ =\ matriz\_atual-\/>proximo;}
+\DoxyCodeLine{00438\ \ \ \ \ \}}
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00440\ \ \ \ \ fclose(arquivo);}
+\DoxyCodeLine{00441\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Matriz\ gravada\ com\ sucesso\ no\ arquivo:\ \%s\(\backslash\)n"{}},\ filename);}
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keywordflow}{return}\ iniciomatriz;}
+\DoxyCodeLine{00443\ \}}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00451\ \textcolor{keywordtype}{int}\ somamatrix(Matriz*\ iniciomatriz)\ \{\ }
+\DoxyCodeLine{00452\ \ \ \ \ \textcolor{comment}{//int*\ array;}}
+\DoxyCodeLine{00453\ \ \ \ \ \textcolor{comment}{//\ Chama\ a\ função\ para\ criar\ o\ array}}
+\DoxyCodeLine{00454\ \ \ \ \ \textcolor{comment}{//array\ =\ criarArray(matrizTotal);}}
+\DoxyCodeLine{00455\ }
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{comment}{//ter\ um\ array\ com\ os\ valores\ da\ row\ e\ coluna\ que\ se\ podem\ usar}}
+\DoxyCodeLine{00457\ \ \ \ \ \textcolor{keywordtype}{int}\ coluna[]\ =\ \{\ 1,\ 2,\ 3,\ 4,\ 5\ \};}
+\DoxyCodeLine{00458\ \ \ \ \ \textcolor{keywordtype}{int}\ tamanho\ =\ \textcolor{keyword}{sizeof}(coluna)\ /\ \textcolor{keyword}{sizeof}(coluna[0]);}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ }
+\DoxyCodeLine{00461\ \ \ \ \ }
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00463\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ a\ coluna\ e\ valida}}
+\DoxyCodeLine{00464\ \ \ \ \ \textcolor{comment}{/*if\ (cols\ <\ 1)}}
+\DoxyCodeLine{00465\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{00466\ \textcolor{comment}{\ \ \ \ \ \ \ \ printf("{}coluna\ invalida"{});}}
+\DoxyCodeLine{00467\ \textcolor{comment}{\ \ \ \ \}*/}}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \ \ \ \ Matriz*\ auxMatriz\ =\ iniciomatriz;}
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00472\ \ \ \ \ Linha*\ auxLinha\ =\ NULL;}
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{keywordtype}{int}\ linhaentrar\ =\ 1;}
+\DoxyCodeLine{00474\ \ \ \ \ \textcolor{keywordtype}{int}\ colunaentrar\ =\ 1;}
+\DoxyCodeLine{00475\ \ \ \ \ \textcolor{comment}{//\ Armazena\ as\ posicoes\ }}
+\DoxyCodeLine{00476\ \ \ \ \ \textcolor{keywordtype}{int}\ linha\_Atual\ =\ 1;}
+\DoxyCodeLine{00477\ \ \ \ \ \textcolor{keywordtype}{int}\ coluna\_Atual\ =\ 1;}
+\DoxyCodeLine{00478\ \ \ \ \ \textcolor{keywordtype}{int}\ valor\_maior\ =\ 1;}
+\DoxyCodeLine{00479\ \ \ \ \ \textcolor{keywordtype}{int}\ guardar\_coluna\_do\_maior\ =\ 0;}
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keywordtype}{int}\ guardar\_linha\_do\_maior\ =\ 0;}
+\DoxyCodeLine{00481\ \ \ \ \ \textcolor{keywordtype}{int}\ soma\ =\ 0;}
+\DoxyCodeLine{00482\ \ \ \ \ \textcolor{comment}{//\ Percorre\ a\ lista\ de\ Matriz.}}
+\DoxyCodeLine{00483\ \ \ \ \ \textcolor{keywordflow}{while}\ (auxMatriz\ !=\ NULL)}
+\DoxyCodeLine{00484\ \ \ \ \ \{}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \textcolor{comment}{//for\ esta\ mal\ tempo\ calcular\ o\ tamanho\ do}}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ tamanho;\ i++)\ \{}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Inicializa\ o\ ponteiro\ para\ percorrer\ a\ lista\ de\ Linha.}}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auxLinha\ =\ auxMatriz-\/>inicioLinha;}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Percorre\ a\ lista\ de\ Linha.}}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (auxLinha\ !=\ NULL)}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00494\ }
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (valorExiste(coluna,\ tamanho,\ coluna\_Atual))\ \{}
+\DoxyCodeLine{00496\ }
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ a\ coluna\ atual\ for\ a\ coluna\ desejada.}}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (auxLinha-\/>valor\ >\ valor\_maior)\ \{}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ valor\_maior\ =\ auxLinha-\/>valor;}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ guardar\_coluna\_do\_maior\ =\ coluna\_Atual;}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ guardar\_linha\_do\_maior\ =\ linha\_Atual;}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Removendo\ o\ elemento\ de\ índice\ 2\ (valor\ 3)}}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ removerElemento(rows,\ \&tamanho,\ linha\_Atual\ -\/\ 1);}}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00505\ }
+\DoxyCodeLine{00506\ }
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ }
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Atualiza\ a\ coluna\ atual\ e\ avanca\ para\ a\ proxima\ lista}}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ coluna\_Atual++;}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auxLinha\ =\ auxLinha-\/>proximo;}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00515\ }
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ tamanho;}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00519\ }
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ conta\ as\ listas\ que\ foram\ percorridas}}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ linha\_Atual++;}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ coluna\_Atual\ =\ 1;}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ soma\ +=\ valor\_maior;}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ valor\_maior\ =\ 0;}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \textcolor{comment}{//\ \ tamanho\ =\ removerElemento(coluna,\ tamanho,\ guardar\_coluna\_do\_maior\ -\/\ 1);}}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ guardar\_coluna\_do\_maior\ -\/\ 1;}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ size\ =\ tamanho;}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0)\ \{}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Índice\ inválido\(\backslash\)n"{}});}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (size\ ==\ 2)\ \{}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ index\ =\ 1;}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (size\ ==\ 1)\ \{}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \ \ \ \ index\ =\ 0;}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ index;\ i\ <\ size;\ ++i)\ \{}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ coluna[i]\ =\ coluna[i\ +\ 1];}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ tamanho\ =\ size\ -\/\ 1;}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ printf("{}Array\ apos\ a\ remocao:\(\backslash\)n"{});}}
+\DoxyCodeLine{00544\ \textcolor{comment}{\ \ \ \ \ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ tamanho;\ ++i)\ \{}}
+\DoxyCodeLine{00545\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ printf("{}\%d\ "{},\ coluna[i]);}}
+\DoxyCodeLine{00546\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00547\ \textcolor{comment}{\ \ \ \ \ \ \ \ printf("{}\(\backslash\)n"{});*/}}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ guardar\_coluna\_do\_maior\ =\ 0;}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ guardar\_linha\_do\_maior\ =\ 0;}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \textcolor{comment}{//ir\ para\ a\ proxima\ lista}}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ auxMatriz\ =\ auxMatriz-\/>proximo;}
+\DoxyCodeLine{00553\ }
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00555\ \ \ \ \ \}}
+\DoxyCodeLine{00556\ \ \ \ \ }
+\DoxyCodeLine{00557\ \ \ \ \ \textcolor{keywordflow}{return}\ soma;}
+\DoxyCodeLine{00558\ \}}
+\DoxyCodeLine{00559\ }
+\DoxyCodeLine{00560\ }
+\DoxyCodeLine{00561\ \textcolor{keywordtype}{int}\ removerElemento(\textcolor{keywordtype}{int}\ array[],\ \textcolor{keywordtype}{int}\ size,\ \textcolor{keywordtype}{int}\ index)\ \{}
+\DoxyCodeLine{00562\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0\ ||\ index\ >=\ size)\ \{}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Indice\ invalido\(\backslash\)n"{}});}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00565\ \ \ \ \ \}}
+\DoxyCodeLine{00566\ }
+\DoxyCodeLine{00567\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ index;\ i\ <\ size\ -\/\ 1;\ ++i)\ \{}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ array[i]\ =\ array[i\ +\ 1];}
+\DoxyCodeLine{00569\ \ \ \ \ \}}
+\DoxyCodeLine{00570\ }
+\DoxyCodeLine{00571\ \ \ \ \ \textcolor{keywordflow}{return}\ size\ -\/\ 1;}
+\DoxyCodeLine{00572\ \}}
+\DoxyCodeLine{00573\ }
+\DoxyCodeLine{00574\ \textcolor{keywordtype}{bool}\ valorExiste(\textcolor{keywordtype}{int}\ array[],\ \textcolor{keywordtype}{int}\ tamanho,\ \textcolor{keywordtype}{int}\ valor)\ \{}
+\DoxyCodeLine{00575\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ tamanho;\ i++)\ \{}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (array[i]\ ==\ valor)\ \{}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ Valor\ encontrado\ no\ array}}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00579\ \ \ \ \ \}}
+\DoxyCodeLine{00580\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ Valor\ não\ encontrado\ no\ array}}
+\DoxyCodeLine{00581\ \}}
+\DoxyCodeLine{00582\ }
+\DoxyCodeLine{00583\ \textcolor{keywordtype}{int}*\ criarArray(\textcolor{keywordtype}{int}\ tamanho)\ \{}
+\DoxyCodeLine{00584\ \ \ \ \ \textcolor{keywordtype}{int}*\ array\ =\ malloc(tamanho\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));\ \textcolor{comment}{//\ Aloca\ memória\ para\ o\ array}}
+\DoxyCodeLine{00585\ }
+\DoxyCodeLine{00586\ \ \ \ \ \textcolor{keywordflow}{if}\ (array\ ==\ NULL)\ \{\ \textcolor{comment}{//\ Verifica\ se\ a\ alocação\ foi\ bem-\/sucedida}}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erro\ ao\ alocar\ memória.\(\backslash\)n"{}});}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00589\ \ \ \ \ \}}
+\DoxyCodeLine{00590\ }
+\DoxyCodeLine{00591\ \ \ \ \ \textcolor{comment}{//\ Preenche\ o\ array\ com\ números\ de\ 1\ até\ o\ tamanho\ da\ matriz}}
+\DoxyCodeLine{00592\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ tamanho;\ i++)\ \{}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ array[i]\ =\ i\ +\ 1;}
+\DoxyCodeLine{00594\ \ \ \ \ \}}
+\DoxyCodeLine{00595\ }
+\DoxyCodeLine{00596\ \ \ \ \ \textcolor{keywordflow}{return}\ array;}
+\DoxyCodeLine{00597\ \}}
+
+\end{DoxyCode}

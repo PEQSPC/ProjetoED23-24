@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.c'],['../test_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;test.c']]]
+  ['gravarmatrix_0',['gravarmatrix',['../_header_8h.html#ac41a19955aab10d9af5fc415bd653b65',1,'gravarmatrix(Matriz *iniciomatriz, char *filename):&#160;Source.c'],['../_source_8c.html#ac41a19955aab10d9af5fc415bd653b65',1,'gravarmatrix(Matriz *iniciomatriz, char *filename):&#160;Source.c']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['next_0',['next',['../structnode.html#aa162dd1e0693188a22b1f13b9a2a0ef0',1,'node::next'],['../structmatrix.html#a226e8ff5c9d249a701491fc264cc0231',1,'matrix::next']]]
+  ['proximo_0',['proximo',['../structlinha.html#ac9103afc46d10446cac3ae1b5cadeb1c',1,'linha::proximo'],['../structmatriz.html#a551561d5d55e8c652e552a7920727d05',1,'matriz::proximo']]]
 ];

@@ -18,7 +18,10 @@
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source.c">
+    <ClCompile Include="functions.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="functions_files.c">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>

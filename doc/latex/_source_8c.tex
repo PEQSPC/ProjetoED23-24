@@ -1,0 +1,335 @@
+\doxysection{E\+:/\+C/\+Projeto\+ED\+\_\+2324/\+Projeto\+ED\+\_\+2324/\+Source.c File Reference}
+\label{_source_8c}\index{E:/C/ProjetoED\_2324/ProjetoED\_2324/Source.c@{E:/C/ProjetoED\_2324/ProjetoED\_2324/Source.c}}
+{\ttfamily \#include "{}Header.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Linha} $\ast$ \textbf{ inserir\+Dados\+Inicio\+Linha} (\textbf{ Linha} $\ast$inicio, int valor\+Inserir)
+\item 
+\textbf{ Matriz} $\ast$ \textbf{ inserir\+Nova\+Linha} (\textbf{ Matriz} $\ast$inicio, \textbf{ Linha} $\ast$linha\+Inserir)
+\item 
+\textbf{ Matriz} $\ast$ \textbf{ remover\+Linha\+Existente} (\textbf{ Matriz} $\ast$inicio, int linha\+Para\+Remover)
+\item 
+\textbf{ Matriz} $\ast$ \textbf{ remover\+Coluna} (\textbf{ Matriz} $\ast$inicio, int coluna\+Para\+Remover)
+\item 
+\textbf{ Linha} $\ast$ \textbf{ remover\+Coluna\+Existente} (\textbf{ Linha} $\ast$inicio, int coluna\+Para\+Remover)
+\item 
+bool \textbf{ print\+Linha} (\textbf{ Linha} $\ast$\textbf{ linha})
+\item 
+bool \textbf{ print\+Matriz} (\textbf{ Matriz} $\ast$\textbf{ matriz})
+\item 
+bool \textbf{ alterarvalor} (\textbf{ Matriz} $\ast$inicio, int \textbf{ linha}, int coluna, int novo\+Dado)
+\item 
+\textbf{ Linha} $\ast$ \textbf{ inserir\+Dados\+Fim\+Linha} (\textbf{ Linha} $\ast$inicio, int valor)
+\item 
+\textbf{ Matriz} $\ast$ \textbf{ carregar\+Ficheiro\+Matriz} (char $\ast$nome\+Ficheiro)
+\begin{DoxyCompactList}\small\item\em Carrega o ficheiro e guardas informa{\ucr}oes nas structs. \end{DoxyCompactList}\item 
+\textbf{ Matriz} $\ast$ \textbf{ gravarmatrix} (\textbf{ Matriz} $\ast$iniciomatriz, char $\ast$filename)
+\item 
+int \textbf{ somamatrix} (\textbf{ Matriz} $\ast$iniciomatriz)
+\item 
+int \textbf{ remover\+Elemento} (int array[$\,$], int size, int index)
+\item 
+bool \textbf{ valor\+Existe} (int array[$\,$], int tamanho, int valor)
+\item 
+int $\ast$ \textbf{ criar\+Array} (int tamanho)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\label{_source_8c_ac4c67843d3393eabbaacdcbc6107e12f} 
+\index{Source.c@{Source.c}!alterarvalor@{alterarvalor}}
+\index{alterarvalor@{alterarvalor}!Source.c@{Source.c}}
+\doxysubsubsection{alterarvalor()}
+{\footnotesize\ttfamily bool alterarvalor (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{inicio,  }\item[{int}]{linha,  }\item[{int}]{coluna,  }\item[{int}]{novo\+Dado }\end{DoxyParamCaption})}
+
+Funcao para alterar o valor de um dado em uma matriz..
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em linha} & \\
+\hline
+{\em coluna} & \\
+\hline
+{\em novo\+Dado} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 240} of file \textbf{ Source.\+c}.
+
+\label{_source_8c_ae689da47348fd20b7c125b480e99e62a} 
+\index{Source.c@{Source.c}!carregarFicheiroMatriz@{carregarFicheiroMatriz}}
+\index{carregarFicheiroMatriz@{carregarFicheiroMatriz}!Source.c@{Source.c}}
+\doxysubsubsection{carregarFicheiroMatriz()}
+{\footnotesize\ttfamily \textbf{ Matriz} $\ast$ carregar\+Ficheiro\+Matriz (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome\+Ficheiro }\end{DoxyParamCaption})}
+
+
+
+Carrega o ficheiro e guardas informa{\ucr}oes nas structs. 
+
+Funcao para carregar uma matriz a partir de um arquivo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+Ficheiro} & matriz.\+txt \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+do inicio da matriz 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 334} of file \textbf{ Source.\+c}.
+
+\label{_source_8c_a4dea0c43c466428b8bda185f86a504e2} 
+\index{Source.c@{Source.c}!criarArray@{criarArray}}
+\index{criarArray@{criarArray}!Source.c@{Source.c}}
+\doxysubsubsection{criarArray()}
+{\footnotesize\ttfamily int $\ast$ criar\+Array (\begin{DoxyParamCaption}\item[{int}]{tamanho }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 583} of file \textbf{ Source.\+c}.
+
+\label{_source_8c_ac41a19955aab10d9af5fc415bd653b65} 
+\index{Source.c@{Source.c}!gravarmatrix@{gravarmatrix}}
+\index{gravarmatrix@{gravarmatrix}!Source.c@{Source.c}}
+\doxysubsubsection{gravarmatrix()}
+{\footnotesize\ttfamily \textbf{ Matriz} $\ast$ gravarmatrix (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{iniciomatriz,  }\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+Gravar a matriz depois de tudo o processo no main ,gravar o resultado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iniciomatriz} & entrada do incio da matriz \\
+\hline
+{\em filename} & matriz.\+txt \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inicio da matriz 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 407} of file \textbf{ Source.\+c}.
+
+\label{_source_8c_a2c90e2f5676c00e1fe7267d8fb049679} 
+\index{Source.c@{Source.c}!inserirDadosFimLinha@{inserirDadosFimLinha}}
+\index{inserirDadosFimLinha@{inserirDadosFimLinha}!Source.c@{Source.c}}
+\doxysubsubsection{inserirDadosFimLinha()}
+{\footnotesize\ttfamily \textbf{ Linha} $\ast$ inserir\+Dados\+Fim\+Linha (\begin{DoxyParamCaption}\item[{\textbf{ Linha} $\ast$}]{inicio,  }\item[{int}]{valor }\end{DoxyParamCaption})}
+
+Inserir dados no fim da lista.\+Export feito de github luferipca
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em valor\+Inserir} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 305} of file \textbf{ Source.\+c}.
+
+\label{_source_8c_ad7448815e74265937ce44a524831000e} 
+\index{Source.c@{Source.c}!inserirDadosInicioLinha@{inserirDadosInicioLinha}}
+\index{inserirDadosInicioLinha@{inserirDadosInicioLinha}!Source.c@{Source.c}}
+\doxysubsubsection{inserirDadosInicioLinha()}
+{\footnotesize\ttfamily \textbf{ Linha} $\ast$ inserir\+Dados\+Inicio\+Linha (\begin{DoxyParamCaption}\item[{\textbf{ Linha} $\ast$}]{inicio,  }\item[{int}]{valor\+Inserir }\end{DoxyParamCaption})}
+
+Funcao para inserir um novo inicio de uma lista ligada da Linha.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em valor\+Inserir} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 22} of file \textbf{ Source.\+c}.
+
+\label{_source_8c_adef5aa5df5421ad33cb12cf733b9d9bd} 
+\index{Source.c@{Source.c}!inserirNovaLinha@{inserirNovaLinha}}
+\index{inserirNovaLinha@{inserirNovaLinha}!Source.c@{Source.c}}
+\doxysubsubsection{inserirNovaLinha()}
+{\footnotesize\ttfamily \textbf{ Matriz} $\ast$ inserir\+Nova\+Linha (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{inicio,  }\item[{\textbf{ Linha} $\ast$}]{linha\+Inserir }\end{DoxyParamCaption})}
+
+Funcao para adcicionar uma lista a matriz
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em linha\+Inserir} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 43} of file \textbf{ Source.\+c}.
+
+\label{_source_8c_a20c7c67ce43b16712e49bb5c683c7391} 
+\index{Source.c@{Source.c}!printLinha@{printLinha}}
+\index{printLinha@{printLinha}!Source.c@{Source.c}}
+\doxysubsubsection{printLinha()}
+{\footnotesize\ttfamily bool print\+Linha (\begin{DoxyParamCaption}\item[{\textbf{ Linha} $\ast$}]{linha }\end{DoxyParamCaption})}
+
+Funcao para imprimir os valores de uma linha de uma matriz..
+
+
+\begin{DoxyParams}{Parameters}
+{\em linha} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 186} of file \textbf{ Source.\+c}.
+
+\label{_source_8c_a575e07dc0fefeaab8498c0d9b4b8ef44} 
+\index{Source.c@{Source.c}!printMatriz@{printMatriz}}
+\index{printMatriz@{printMatriz}!Source.c@{Source.c}}
+\doxysubsubsection{printMatriz()}
+{\footnotesize\ttfamily bool print\+Matriz (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{matriz }\end{DoxyParamCaption})}
+
+Funcao para imprimir os valores de uma linha de uma matriz..
+
+
+\begin{DoxyParams}{Parameters}
+{\em matriz} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 218} of file \textbf{ Source.\+c}.
+
+\label{_source_8c_a399c90787ea0c1484d5504ed62067c0e} 
+\index{Source.c@{Source.c}!removerColuna@{removerColuna}}
+\index{removerColuna@{removerColuna}!Source.c@{Source.c}}
+\doxysubsubsection{removerColuna()}
+{\footnotesize\ttfamily \textbf{ Matriz} $\ast$ remover\+Coluna (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{inicio,  }\item[{int}]{coluna\+Para\+Remover }\end{DoxyParamCaption})}
+
+Funcao para remover uma coluna de uma lista da Matriz...
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em coluna\+Para\+Remover} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 109} of file \textbf{ Source.\+c}.
+
+\label{_source_8c_af361aa31f0afbb29143bc58022ec594a} 
+\index{Source.c@{Source.c}!removerColunaExistente@{removerColunaExistente}}
+\index{removerColunaExistente@{removerColunaExistente}!Source.c@{Source.c}}
+\doxysubsubsection{removerColunaExistente()}
+{\footnotesize\ttfamily \textbf{ Linha} $\ast$ remover\+Coluna\+Existente (\begin{DoxyParamCaption}\item[{\textbf{ Linha} $\ast$}]{inicio,  }\item[{int}]{coluna\+Para\+Remover }\end{DoxyParamCaption})}
+
+Fuction to assist remover\+Coluna.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em coluna\+Para\+Remover} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 137} of file \textbf{ Source.\+c}.
+
+\label{_source_8c_add5cc53969d5aab51c064502f7d853c9} 
+\index{Source.c@{Source.c}!removerElemento@{removerElemento}}
+\index{removerElemento@{removerElemento}!Source.c@{Source.c}}
+\doxysubsubsection{removerElemento()}
+{\footnotesize\ttfamily int remover\+Elemento (\begin{DoxyParamCaption}\item[{int}]{array[$\,$],  }\item[{int}]{size,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 561} of file \textbf{ Source.\+c}.
+
+\label{_source_8c_a7658c59358140ef08a11f9c78d310ae3} 
+\index{Source.c@{Source.c}!removerLinhaExistente@{removerLinhaExistente}}
+\index{removerLinhaExistente@{removerLinhaExistente}!Source.c@{Source.c}}
+\doxysubsubsection{removerLinhaExistente()}
+{\footnotesize\ttfamily \textbf{ Matriz} $\ast$ remover\+Linha\+Existente (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{inicio,  }\item[{int}]{linha\+Para\+Remover }\end{DoxyParamCaption})}
+
+Funcao para remover uma linha de uma lista ligada de Matriz..
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & \\
+\hline
+{\em linha\+Para\+Remover} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+da matriz sem a coluna 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 64} of file \textbf{ Source.\+c}.
+
+\label{_source_8c_aa9525e239572dcf3797c94ace2141e95} 
+\index{Source.c@{Source.c}!somamatrix@{somamatrix}}
+\index{somamatrix@{somamatrix}!Source.c@{Source.c}}
+\doxysubsubsection{somamatrix()}
+{\footnotesize\ttfamily int somamatrix (\begin{DoxyParamCaption}\item[{\textbf{ Matriz} $\ast$}]{iniciomatriz }\end{DoxyParamCaption})}
+
+Funcao para fazer a soma total da matriz sem repetir coluna e linha,testado com array de 5x5 .
+
+
+\begin{DoxyParams}{Parameters}
+{\em iniciomatriz} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+da return da soma total da matriz sem repetir coluna e linha 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 451} of file \textbf{ Source.\+c}.
+
+\label{_source_8c_ac3b15e873afb39ef69029a9bc8179209} 
+\index{Source.c@{Source.c}!valorExiste@{valorExiste}}
+\index{valorExiste@{valorExiste}!Source.c@{Source.c}}
+\doxysubsubsection{valorExiste()}
+{\footnotesize\ttfamily bool valor\+Existe (\begin{DoxyParamCaption}\item[{int}]{array[$\,$],  }\item[{int}]{tamanho,  }\item[{int}]{valor }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 574} of file \textbf{ Source.\+c}.
+

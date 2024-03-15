@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['proximo_0',['proximo',['../structlinha.html#ac9103afc46d10446cac3ae1b5cadeb1c',1,'linha::proximo'],['../structmatriz.html#a551561d5d55e8c652e552a7920727d05',1,'matriz::proximo']]]
+  ['valor_0',['valor',['../structlinha.html#a83201786792501b53e667771949a8129',1,'linha']]]
 ];

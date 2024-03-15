@@ -1,13 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "acfilmnprstv",
-  1: "lmn",
-  2: "fmrt",
-  3: "acimp",
-  4: "imnpsv",
-  5: "lmn",
-  6: "f",
-  7: "p"
+  0: "acfghilmprsvw",
+  1: "lm",
+  2: "fhmps",
+  3: "acfgimprsv",
+  4: "impv",
+  5: "lm",
+  6: "fw"
 };
 
 var indexSectionNames =
@@ -18,8 +17,7 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "typedefs",
-  6: "defines",
-  7: "pages"
+  6: "defines"
 };
 
 var indexSectionLabels =
@@ -30,7 +28,6 @@ var indexSectionLabels =
   3: "Functions",
   4: "Variables",
   5: "Typedefs",
-  6: "Macros",
-  7: "Pages"
+  6: "Macros"
 };
 

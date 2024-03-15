@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['printlinha_0',['printLinha',['../functions_8c.html#a20c7c67ce43b16712e49bb5c683c7391',1,'printLinha(Linha *linha):&#160;functions.c'],['../main_8h.html#a20c7c67ce43b16712e49bb5c683c7391',1,'printLinha(Linha *linha):&#160;functions.c']]],
-  ['printmatriz_1',['printMatriz',['../functions_8c.html#a575e07dc0fefeaab8498c0d9b4b8ef44',1,'printMatriz(Matriz *matriz):&#160;functions.c'],['../main_8h.html#a575e07dc0fefeaab8498c0d9b4b8ef44',1,'printMatriz(Matriz *matriz):&#160;functions.c'],['../test_8c.html#a2f22dc8aa8efb9e4549cf00e3b0f910f',1,'printMatriz(Matrix *matriz):&#160;test.c'],['../teste_8h.html#a2f22dc8aa8efb9e4549cf00e3b0f910f',1,'printMatriz(Matrix *matriz):&#160;test.c']]]
+  ['inserirdadosfimlinha_0',['inserirDadosFimLinha',['../_source_8c.html#a2c90e2f5676c00e1fe7267d8fb049679',1,'Source.c']]],
+  ['inserirdadosiniciolinha_1',['inserirDadosInicioLinha',['../_header_8h.html#ad7448815e74265937ce44a524831000e',1,'inserirDadosInicioLinha(Linha *inicio, int valorInserir):&#160;Source.c'],['../_source_8c.html#ad7448815e74265937ce44a524831000e',1,'inserirDadosInicioLinha(Linha *inicio, int valorInserir):&#160;Source.c']]],
+  ['inserirnovalinha_2',['inserirNovaLinha',['../_header_8h.html#ad06da29ccbeea8759bcf171dce2c8fd1',1,'inserirNovaLinha(Matriz *inicio, Linha *LinhaInserir):&#160;Source.c'],['../_source_8c.html#adef5aa5df5421ad33cb12cf733b9d9bd',1,'inserirNovaLinha(Matriz *inicio, Linha *linhaInserir):&#160;Source.c']]]
 ];

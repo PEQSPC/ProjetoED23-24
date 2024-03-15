@@ -1,17 +1,19 @@
-﻿  Source.c
-E:\C\ProjetoED_2324\ProjetoED_2324\Source.c(358,27): warning C4473: 'fscanf_s' : not enough arguments passed for format string
-  E:\C\ProjetoED_2324\ProjetoED_2324\Source.c(358,27):
+﻿  functions.c
+E:\C\ProjetoED_2324\ProjetoED_2324\functions.c(426,13): warning C4033: 'somamatrix' must return a value
+E:\C\ProjetoED_2324\ProjetoED_2324\functions.c(459,9): warning C4033: 'removerElemento' must return a value
+  functions_files.c
+E:\C\ProjetoED_2324\ProjetoED_2324\functions_files.c(90,27): warning C4473: 'fscanf_s' : not enough arguments passed for format string
+  E:\C\ProjetoED_2324\ProjetoED_2324\functions_files.c(90,27):
   placeholders and their parameters expect 3 variadic arguments, but 2 were provided
-  E:\C\ProjetoED_2324\ProjetoED_2324\Source.c(358,27):
+  E:\C\ProjetoED_2324\ProjetoED_2324\functions_files.c(90,27):
   the missing variadic argument 3 is required by format string '%c'
-  E:\C\ProjetoED_2324\ProjetoED_2324\Source.c(358,27):
+  E:\C\ProjetoED_2324\ProjetoED_2324\functions_files.c(90,27):
   this argument is used as a buffer size
   
-E:\C\ProjetoED_2324\ProjetoED_2324\Source.c(531,13): warning C4033: 'somamatrix' must return a value
-E:\C\ProjetoED_2324\ProjetoED_2324\Source.c(564,9): warning C4033: 'removerElemento' must return a value
+E:\C\ProjetoED_2324\ProjetoED_2324\functions_files.c(93,23): warning C4013: 'inserirDadosFimLinha' undefined; assuming extern returning int
+E:\C\ProjetoED_2324\ProjetoED_2324\functions_files.c(93,21): warning C4047: '=': 'Linha *' differs in levels of indirection from 'int'
   main.c
   Generating Code...
-E:\C\ProjetoED_2324\ProjetoED_2324\Source.c(226,1): warning C4716: 'printMatriz': must return a value
-E:\C\ProjetoED_2324\ProjetoED_2324\Source.c(558,1): warning C4715: 'somamatrix': not all control paths return a value
-E:\C\ProjetoED_2324\ProjetoED_2324\Source.c(572,1): warning C4715: 'removerElemento': not all control paths return a value
+E:\C\ProjetoED_2324\ProjetoED_2324\functions.c(453,1): warning C4715: 'somamatrix': not all control paths return a value
+E:\C\ProjetoED_2324\ProjetoED_2324\functions.c(467,1): warning C4715: 'removerElemento': not all control paths return a value
   ProjetoED_2324.vcxproj -> E:\C\ProjetoED_2324\x64\Debug\ProjetoED_2324.exe
