@@ -25,11 +25,12 @@ int main() {
 	//inicioMatriz = removerLinhaExistente(inicioMatriz, 3);
 //	removerColuna(inicioMatriz, 3);
 	//como perdemos o valor do inicio da linha atribuimos o valor que se guarda na matriz outra vez a linha
+	//se for usar alguma funcao com entrada de linha uso este metodo
 	if (inicioMatriz != NULL) {
 		inicioLinha = inicioMatriz->inicioLinha;
 	}
 
-	/*inicioMatriz = removerColuna(inicioMatriz, 1);*/
+	//inicioMatriz = removerColuna(inicioMatriz, 1);*/
 	//printMatriz(inicioMatriz);
 	
 	soma = somamatriz(inicioMatriz);

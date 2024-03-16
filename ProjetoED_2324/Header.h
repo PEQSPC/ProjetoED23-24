@@ -99,13 +99,13 @@ Matriz* removerColuna(Matriz* inicio, int colunaParaRemover);
  * 2024
  * Grava a matriz em memoria num ficheiro txt
  */
-Matriz* gravarmatrix(Matriz* iniciomatriz, char* filename);
+Matriz* gravarmatriz(Matriz* iniciomatriz, char* filename);
 /**
  * GG
  * 2024
  * Soma os valores mais altos da matriz sem repetir colunas nem linhas
  */
-int somamatrix(Matriz* iniciomatriz);
+int somamatriz(Matriz* iniciomatriz);
 /**
  * GG
  * 2024

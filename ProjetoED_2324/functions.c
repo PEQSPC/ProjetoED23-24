@@ -31,7 +31,7 @@ Linha* inserirDadosInicioLinha(Linha* inicio, int valorInserir) {
 
     nova->proximo = inicio;
 
-    // Retorna o ponteiro para a nova lista
+    // Retorna o apontador para a nova lista
     return nova;
 }
 
@@ -40,7 +40,7 @@ Linha* inserirDadosInicioLinha(Linha* inicio, int valorInserir) {
  *
  * \param inicio
  * \param linhaInserir
- * \return
+ * \return matriz inicio
  */
 Matriz* inserirNovaLinha(Matriz* inicio, Linha* linhaInserir) {
     if (linhaInserir == NULL) {
@@ -105,7 +105,7 @@ Matriz* removerLinhaExistente(Matriz* inicio, int linhaParaRemover) {
         auxMatriz = auxMatriz->proximo;
     }
 
-  //  printf("Linha invalida");
+    printf("Linha invalida");
     return inicio;
 }
 
@@ -123,7 +123,7 @@ Matriz* removerColuna(Matriz* inicio, int colunaParaRemover) {
         return inicio; // Retorna a matriz original se a coluna for invalida.
     }
 
-    Matriz* auxMatriz = inicio;// Ponteiro auxiliar para percorrer a lista de linhas
+    Matriz* auxMatriz = inicio;// apontador auxiliar para percorrer a lista de linhas
 
     // Percorre a lista de linhas
     while (auxMatriz != NULL) {
@@ -147,7 +147,7 @@ Linha* removerColunaExistente(Linha* inicio, int colunaParaRemover) {
 
     // Verifica se a coluna a ser removida  valida
     if (colunaParaRemover < 1) {
-        // printf("Coluna invalida");
+        printf("Coluna invalida");
         return inicio; 
     }
 
@@ -172,14 +172,14 @@ Linha* removerColunaExistente(Linha* inicio, int colunaParaRemover) {
         // Se encontrarmos a coluna a ser removida
         if (colunaAtual == colunaParaRemover)
         {
-            // Ajusta o ponteiro da coluna anterior para apontar para a proxima coluna
+            // Ajusta o apontador da coluna anterior para apontar para a proxima coluna
             colunaAntes->proximo = auxColuna->proximo;
             free(auxColuna);
             //free(c)
             return inicio;
         }
 
-        // Atualiza os ponteiros e o contador para a pr�xima itera��o
+        // Incrementa os apontadores e o contador para a proxima iteracao
         colunaAtual++;
         colunaAntes = auxColuna;
         auxColuna = auxColuna->proximo;
@@ -198,7 +198,7 @@ Linha* removerColunaExistente(Linha* inicio, int colunaParaRemover) {
  */
 bool printLinha(Linha* linha) {
 
-    // Inicializa um ponteiro auxiliar para percorrer a linha.
+    // Inicializa o apontador auxiliar para percorrer a linha.
     Linha* aux = linha;
 
     // Percorre a linha ate o final, imprimindo os valores de cada lista.
@@ -212,7 +212,7 @@ bool printLinha(Linha* linha) {
         }
 
 
-        //avan�a com o aux assumindo o valor de proximo
+        //avanca com o aux assumindo o valor de proximo
         aux = aux->proximo;
     }
 
@@ -282,10 +282,10 @@ bool alterarvalor(Matriz* inicio, int linha, int coluna, int novoDado) {
         // Se a linha atual for a linha desejada.
         if (linha_Atual == linha)
         {
-            // Inicializa o ponteiro para percorrer a lista de Linha.
+            // Inicializa o apontador para percorrer a lista da Linha.
             auxLinha = auxMatriz->inicioLinha;
 
-            // Percorre a lista de Linha.
+            // Percorre a lista da Linha.
             while (auxLinha != NULL)
             {
 
@@ -324,7 +324,7 @@ Linha* inserirDadosFimLinha(Linha* inicio, int valor) {
     Linha* novo = (Linha*)malloc(sizeof(Linha));
     if (novo == NULL) return NULL;
 
-    // Define o valor do novo no como o valor fornecido.
+    // Define o valor da nova linha  como o valor fornecido.
     novo->valor = valor;
     novo->proximo = NULL;
 
@@ -340,7 +340,7 @@ Linha* inserirDadosFimLinha(Linha* inicio, int valor) {
         aux->proximo = novo;
     }
 
-    return inicio; // Retorna o ponteiro para o inicio da lista.
+    return inicio; // Retorna o apontador para o inicio da lista.
 }
 
 /**
@@ -385,10 +385,10 @@ int somamatriz(Matriz* iniciomatriz) {
     // Percorre a lista de Matriz.
     while (auxMatriz != NULL)
     {
-        //for esta mal tempo calcular o tamanho do
+        
         for (int i = 0; i < tamanho; i++) {
 
-            // Inicializa o ponteiro para percorrer a lista de Linha.
+            // Inicializa o apontador para percorrer a lista de Linha.
             auxLinha = auxMatriz->inicioLinha;
 
             // Percorre a lista de Linha.

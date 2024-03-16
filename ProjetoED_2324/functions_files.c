@@ -54,7 +54,7 @@ Matriz* gravarmatriz(Matriz* iniciomatriz, char* filename) {
 
     fclose(arquivo);
 
-    //printf("Matriz salva no arquivo: %s\n", filename);
+    printf("Matriz salva no arquivo: %s\n", filename);
     return iniciomatriz;
 }
 
@@ -66,7 +66,7 @@ Matriz* gravarmatriz(Matriz* iniciomatriz, char* filename) {
  */
 Matriz* carregarFicheiroMatriz(char* nomeFicheiro)
 {
-    // ponteiro para o inicio da lista
+    // apontador para o inicio da lista
     Linha* inicioLinha = NULL;
     //guarda a primeira lista
     Matriz* inicioMatriz = NULL;
@@ -111,7 +111,7 @@ Matriz* carregarFicheiroMatriz(char* nomeFicheiro)
                 matriz_atual->proximo = NULL;
             }
 
-            // Reinicia o ponteiro para o inicio da linha.
+            // Reinicia o apontador para o inicio da linha.
             inicioLinha = NULL;
             matrizTotal++;
             printf("\n");
@@ -123,6 +123,6 @@ Matriz* carregarFicheiroMatriz(char* nomeFicheiro)
     // Fecha o arquivo apos a leitura.
     fclose(file);
 
-    // Retorna o ponteiro para o inicio da matriz.
+    // Retorna o apontador para o inicio da matriz.
     return inicioMatriz;
 }
